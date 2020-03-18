@@ -207,4 +207,6 @@
       .icon-box
         = link_to "#",class: 'pen-icon' do
           %i.fa.fa-pencil-alt
-      
+  .footer
+    .footer__log
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
