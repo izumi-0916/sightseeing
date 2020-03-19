@@ -202,9 +202,8 @@
           - @spots.each do |spot|
             .spot-box
               .spot-box__img
-                = image_tag spot.images.first.src.url,size:"220x150"
+                = image_tag spot.images.first.src.url,size:"220x180"
               .spot-box__text
-                .spot-box__text--prefecture
                 .spot-box__text--name
                   = spot.name
     .main-box__form

@@ -1,9 +1,8 @@
 class SpotsController < ApplicationController
 
   def index
-    @spots = Spot.order("created_at DESC")
     @images = Image.all
-    @spots = Spot.all
+    @spots = Spot.all.order("created_at DESC")
   end
   
   def new

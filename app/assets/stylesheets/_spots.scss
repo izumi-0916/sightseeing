@@ -113,9 +113,24 @@
           font-weight: 600;
         }
         .new-contents{
-          background-color: gray;
-          .spot-box{
-            
+          background-color: #f5f5f5;
+          &__box{
+            width: 70%;
+            margin: 0 auto;
+            overflow: scroll;
+            display: flex;
+            .spot-box{
+              
+              padding: 50px 0;
+              margin-right: 40px;
+              &__text{
+                background-color: white;
+                padding: 20px 0;
+                &--name{
+                  text-align: center;
+                }
+              }
+            }
           }
         }
       }
