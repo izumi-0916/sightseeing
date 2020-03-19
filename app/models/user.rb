@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :name, presence: true, uniqueness: true
+  validates :email, format: { with: /\A\S+@\S+\.\S+\z/ }
 end
