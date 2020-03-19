@@ -198,6 +198,15 @@
       .new-title
         新着スポット
       .new-contents
+        .new-contents__box
+          - @spots.each do |spot|
+            .spot-box
+              .spot-box__img
+                = image_tag spot.images.first.src.url,size:"220x150"
+              .spot-box__text
+                .spot-box__text--prefecture
+                .spot-box__text--name
+                  = spot.name
     .main-box__form
       .post
         .post__title
@@ -205,7 +214,7 @@
         .post__icon
           %i.fa.fa-hand-point-right
       .icon-box
-        = link_to "#",class: 'pen-icon' do
+        = link_to new_spot_path,class: 'pen-icon' do
           %i.fa.fa-pencil-alt
   .footer
     .footer__log

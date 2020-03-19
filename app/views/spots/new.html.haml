@@ -1,0 +1,21 @@
+.whapper
+  = form_with model: @spot, local: true do |form|
+    - if @spot.errors.any?
+      .item__errors
+        %h2= "#{@spot.errors.full_messages.count}件のエラーが発生しました。"
+        %ul
+          - @spot.errors.full_messages.each do |message|
+            %li= message
+    #previews
+      #image-box
+        = form.fields_for :images do |image|
+          .js-file_group{"data-index" => "#{image.index}"}
+            = image.file_field :src, class: 'js-file'
+            .js-remove 削除
+    = form.collection_select :prefecture_id, Prefecture.all, :id, :name
+    = form.text_field :name, class: 'a', :placeholder => '場所の名前'
+    = form.text_field :place, class: 'a', :placeholder => '地名'
+    = form.text_field :text, class: 'a', :placeholder => 'text'
+    = form.text_field :station, class: 'a', :placeholder => '最寄り駅'
+    = form.submit "投稿する" , class: 'btn'
+      
