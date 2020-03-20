@@ -1,22 +1,65 @@
-.whapper
+.n-wrapper
   = render "more/header"
-  = form_with model: @spot, local: true do |form|
-    - if @spot.errors.any?
-      .item__errors
-        %h2= "#{@spot.errors.full_messages.count}件のエラーが発生しました。"
-        %ul
-          - @spot.errors.full_messages.each do |message|
-            %li= message
-    #previews
-      #image-box
-        = form.fields_for :images do |image|
-          .js-file_group{"data-index" => "#{image.index}"}
-            = image.file_field :src, class: 'js-file'
-            .js-remove 削除
-    = form.collection_select :prefecture_id, Area.all, :id, :name
-    = form.text_field :name, class: 'a', :placeholder => '場所の名前'
-    = form.text_field :place, class: 'a', :placeholder => '地名'
-    = form.text_field :text, class: 'a', :placeholder => 'text'
-    = form.text_field :station, class: 'a', :placeholder => '最寄り駅'
-    = form.submit "投稿する" , class: 'btn'
-      
+  .n-main
+    = form_with model: @spot, local: true do |form|
+      .error
+        - if @spot.errors.any?
+          .item__errors
+            %h2= "#{@spot.errors.full_messages.count}件のエラーが発生しました。"
+            %ul
+              - @spot.errors.full_messages.each do |message|
+                %li= message
+      .form-contents
+        .form-box
+          .form-box__title
+            おすすめスポットを記入してください
+          .img-field
+            .img-title
+              画像を選択してください
+            %span.need
+              必須
+          #previews
+            #image-box
+              = form.fields_for :images do |image|
+                .js-file_group{"data-index" => "#{image.index}"}
+                  = image.file_field :src, class: 'js-file'
+                  .js-remove 削除
+          .form-box__prefecture
+            .prefecture-box
+              .form-box__prefecture--title
+                県名を入力してください
+              %span.need
+                必須
+            .select-box
+              = form.collection_select :prefecture_id, Area.all, :id, :name
+          .form-box__name
+            .form-box__name--box
+              .name-title
+                場所の名前を入力してください
+              %span.need
+                必須
+            .form-box__name--form
+              = form.text_field :name, class: 'form', :placeholder => '場所の名前'
+          .form-box__place
+            .form-box__place--box
+              .place-title
+                詳しい地名を入力してください
+              %span.need
+                必須
+            .form-box__place--form
+              = form.text_field :place, class: 'form', :placeholder => '地名'
+          .form-box__text
+            .form-box__text--box
+              .text-title
+                おすすめポイントなどを記入してください
+              %span.need
+                必須
+            .form-box__text--form
+              = form.text_area :text, class: 'form-text', :placeholder => 'おすすめポイント', rows: "13"
+          .form-box__station
+            .form-box__station--title
+              最寄り駅を記入してください
+            .form-box__station--form
+              = form.text_field :station, class: 'form', :placeholder => '最寄り駅'
+          = form.submit "投稿する" , class: 'form-btn'
+        
