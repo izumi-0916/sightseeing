@@ -29,5 +29,17 @@
         }
       }
     }
+    &--page{
+      text-align: center;
+      margin-top: 20px;
+    a{
+      text-decoration: none;
+      color: black;
+    }
+    a:hover{
+      color: #3CCACE;
+      text-decoration: underline;
+    }
+    }
   }
 }
