@@ -2,7 +2,7 @@ class SpotsController < ApplicationController
 
   def index
     @images = Image.all
-    @spots = Spot.all.order("created_at DESC")
+    @spots = Spot.all.order("created_at DESC").limit(10)
   end
   
   def new

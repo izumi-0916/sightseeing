@@ -2,9 +2,12 @@
   = render "more/header"
   .p-main
     .p-main__title
-      = @name
+      .p-main__title--name
+        = @name
+      .p-main__title--name
+        の投稿一覧
     .p-main__contents
-      .p-contents__box
+      .p-main__contents--box
         - @spots.each do |spot|
           .p-spot-box
             .p-spot-box__img
