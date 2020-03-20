@@ -1,12 +1,5 @@
 .wrapper
-  .header
-    .header__title
-      .header__title--icon
-        %i.fa.fa-plane
-      .header__title--name
-        Sightseeing
-    .header__text
-      観光スポット探しアプリ
+  = render "more/header"
   .main
     .main-box
       .area
@@ -21,25 +14,25 @@
                 北海道・東北
             %ul.area-list
               %li
-                = link_to "#" do
+                = link_to prefecture_path(1) do
                   北海道
               %li
-                = link_to "#" do
+                = link_to prefecture_path(2) do
                   青森
               %li
-                = link_to "#" do
+                = link_to prefecture_path(5) do
                   秋田
               %li
-                = link_to "#" do
+                = link_to prefecture_path(3) do
                   岩手
               %li
-                = link_to "#" do
+                = link_to prefecture_path(6) do
                   山形
               %li
-                = link_to "#" do
+                = link_to prefecture_path(4) do
                   宮城
               %li
-                = link_to "#" do
+                = link_to prefecture_path(7) do
                   福島
             .area-title
               .area-icon
@@ -48,34 +41,34 @@
                 中部
             %ul.area-list
               %li
-                = link_to "#" do
+                = link_to prefecture_path(23) do
                   愛知
               %li
-                = link_to "#" do
+                = link_to prefecture_path(21) do
                   岐阜
               %li
-                = link_to "#" do
+                = link_to prefecture_path(22) do
                   静岡
               %li
-                = link_to "#" do
+                = link_to prefecture_path(24) do
                   三重
               %li
-                = link_to "#" do
+                = link_to prefecture_path(15) do
                   新潟
               %li
-                = link_to "#" do
+                = link_to prefecture_path(19) do
                   山梨
               %li
-                = link_to "#" do
+                = link_to prefecture_path(20) do
                   長野
               %li
-                = link_to "#" do
+                = link_to prefecture_path(17) do
                   石川
               %li
-                = link_to "#" do
+                = link_to prefecture_path(16) do
                   富山
               %li
-                = link_to "#" do
+                = link_to prefecture_path(18) do
                   福井
             .area-title
               .area-icon
@@ -84,31 +77,31 @@
                 中国・四国
             %ul.area-list
               %li
-                = link_to "#" do
+                = link_to prefecture_path(33) do
                   岡山
               %li
-                = link_to "#" do
+                = link_to prefecture_path(34) do
                   広島
               %li
-                = link_to "#" do
+                = link_to prefecture_path(31) do
                   鳥取
               %li
-                = link_to "#" do
+                = link_to prefecture_path(32) do
                   島根
               %li
-                = link_to "#" do
+                = link_to prefecture_path(35) do
                   山口
               %li
-                = link_to "#" do
+                = link_to prefecture_path(37) do
                   香川
               %li
-                = link_to "#" do
+                = link_to prefecture_path(36) do
                   徳島
               %li
-                = link_to "#" do
+                = link_to prefecture_path(38) do
                   愛媛
               %li
-                = link_to "#" do
+                = link_to prefecture_path(39) do
                   高知
           .area__box--right
             .area-title
@@ -118,25 +111,25 @@
                 関東
             %ul.area-list
               %li
-                = link_to "#" do
+                = link_to prefecture_path(13) do
                   東京
               %li
-                = link_to "#" do
+                = link_to prefecture_path(14) do
                   神奈川
               %li
-                = link_to "#" do
+                = link_to prefecture_path(11) do
                   埼玉
               %li
-                = link_to "#" do
+                = link_to prefecture_path(12) do
                   千葉
               %li
-                = link_to "#" do
+                = link_to prefecture_path(9) do
                   栃木
               %li
-                = link_to "#" do
+                = link_to prefecture_path(8) do
                   茨城
               %li
-                = link_to "#" do
+                = link_to prefecture_path(10) do
                   群馬
             .area-title
               .area-icon
@@ -145,22 +138,22 @@
                 関西
             %ul.area-list
               %li
-                = link_to "#" do
+                = link_to prefecture_path(27) do
                   大阪
               %li
-                = link_to "#" do
+                = link_to prefecture_path(28) do
                   兵庫
               %li
-                = link_to "#" do
+                = link_to prefecture_path(26) do
                   京都
               %li
-                = link_to "#" do
+                = link_to prefecture_path(25) do
                   滋賀
               %li
-                = link_to "#" do
+                = link_to prefecture_path(29) do
                   奈良
               %li
-                = link_to "#" do
+                = link_to prefecture_path(30) do
                   和歌山
             .area-title
               .area-icon
@@ -169,28 +162,28 @@
                 九州・沖縄
             %ul.area-list
               %li
-                = link_to "#" do
+                = link_to prefecture_path(40) do
                   福岡
               %li
-                = link_to "#" do
+                = link_to prefecture_path(41) do
                   佐賀
               %li
-                = link_to "#" do
+                = link_to prefecture_path(42) do
                   長崎
               %li
-                = link_to "#" do
+                = link_to prefecture_path(43) do
                   熊本
               %li
-                = link_to "#" do
+                = link_to prefecture_path(44) do
                   大分
               %li
-                = link_to "#" do
+                = link_to prefecture_path(45) do
                   宮崎
               %li
-                = link_to "#" do
+                = link_to prefecture_path(46) do
                   鹿児島
               %li
-                = link_to "#" do
+                = link_to prefecture_path(47) do
                   沖縄
       .map
         =image_tag'map-japan-deform-prefecture-02.png', size: "600x500", class: "img"
@@ -204,6 +197,101 @@
               .spot-box__img
                 = image_tag spot.images.first.src.url,size:"220x180"
               .spot-box__text
+                .spot-box__text--area
+                  - if spot.prefecture_id == 1
+                    北海道
+                  - elsif spot.prefecture_id == 2
+                    青森県
+                  - elsif spot.prefecture_id == 3
+                    岩手県
+                  - elsif spot.prefecture_id == 4
+                    宮城県
+                  - elsif spot.prefecture_id == 5
+                    秋田県
+                  - elsif spot.prefecture_id == 6
+                    山形県
+                  - elsif spot.prefecture_id == 7
+                    福島県
+                  - elsif spot.prefecture_id == 8
+                    茨城県
+                  - elsif spot.prefecture_id == 9
+                    栃木県
+                  - elsif spot.prefecture_id == 10
+                    群馬県
+                  - elsif spot.prefecture_id == 11
+                    埼玉県
+                  - elsif spot.prefecture_id == 12
+                    千葉県
+                  - elsif spot.prefecture_id == 13
+                    東京都
+                  - elsif spot.prefecture_id == 14
+                    神奈川県
+                  - elsif spot.prefecture_id == 15
+                    新潟県
+                  - elsif spot.prefecture_id == 16
+                    富山県
+                  - elsif spot.prefecture_id == 17
+                    石川県
+                  - elsif spot.prefecture_id == 18
+                    福井県
+                  - elsif spot.prefecture_id == 19
+                    山梨県
+                  - elsif spot.prefecture_id == 20
+                    長野県
+                  - elsif spot.prefecture_id == 21
+                    岐阜県
+                  - elsif spot.prefecture_id == 22
+                    静岡県
+                  - elsif spot.prefecture_id == 23
+                    愛知県
+                  - elsif spot.prefecture_id == 24
+                    三重県
+                  - elsif spot.prefecture_id == 25
+                    滋賀県
+                  - elsif spot.prefecture_id == 26
+                    京都府
+                  - elsif spot.prefecture_id == 27
+                    大阪府
+                  - elsif spot.prefecture_id == 28
+                    兵庫県
+                  - elsif spot.prefecture_id == 29
+                    奈良県
+                  - elsif spot.prefecture_id == 30
+                    和歌山県
+                  - elsif spot.prefecture_id == 31
+                    鳥取県
+                  - elsif spot.prefecture_id == 32
+                    島根県
+                  - elsif spot.prefecture_id == 33
+                    岡山県
+                  - elsif spot.prefecture_id == 34
+                    広島県
+                  - elsif spot.prefecture_id == 35
+                    山口県
+                  - elsif spot.prefecture_id == 36
+                    徳島県
+                  - elsif spot.prefecture_id == 37
+                    香川県
+                  - elsif spot.prefecture_id == 38
+                    愛媛県
+                  - elsif spot.prefecture_id == 39
+                    高知県
+                  - elsif spot.prefecture_id == 40
+                    福岡県
+                  - elsif spot.prefecture_id == 41
+                    佐賀県
+                  - elsif spot.prefecture_id == 42
+                    長崎県
+                  - elsif spot.prefecture_id == 43
+                    熊本県
+                  - elsif spot.prefecture_id == 44
+                    大分県
+                  - elsif spot.prefecture_id == 45
+                    宮崎県
+                  - elsif spot.prefecture_id == 46
+                    鹿児島県
+                  - elsif spot.prefecture_id == 47
+                    沖縄県
                 .spot-box__text--name
                   = spot.name
     .main-box__form
@@ -212,8 +300,8 @@
           おすすめスポットを投稿
         .post__icon
           %i.fa.fa-hand-point-right
-      .icon-box
-        = link_to new_spot_path,class: 'pen-icon' do
+      = link_to new_spot_path,class: 'pen-icon' do
+        .icon-box
           %i.fa.fa-pencil-alt
   .footer
     .footer__log

@@ -1,0 +1,14 @@
+.wrapper
+  = render "more/header"
+  .p-main
+    .p-main__title
+      = @name
+    .p-main__contents
+      .p-contents__box
+        - @spots.each do |spot|
+          .p-spot-box
+            .p-spot-box__img
+              = image_tag spot.images.first.src.url,size:"220x180"
+            .p-spot-box__text
+              .p-spot-box__text--name
+                = spot.name
