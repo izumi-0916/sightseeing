@@ -1,0 +1,31 @@
+.header{
+  background-image: url(photo0000-2959.jpg);
+  background-size: cover;
+  &__title{
+    padding-top: 10px;
+    color: white;
+    font-size: 25px;
+    &--icon{
+      float: left;
+      margin-left: 20px;
+    }
+    &--name{
+      float: left;
+      margin-left: 10px;
+    }
+    a{
+      color: white;
+      text-decoration: none;
+    }
+    a:hover{
+      color: #C0C0C0;
+    }
+  }
+  &__text{
+    clear: both;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    padding-bottom: 50px;
+  }
+}

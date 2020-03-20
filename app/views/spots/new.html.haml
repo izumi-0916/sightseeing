@@ -1,4 +1,5 @@
 .whapper
+  = render "more/header"
   = form_with model: @spot, local: true do |form|
     - if @spot.errors.any?
       .item__errors
@@ -12,7 +13,7 @@
           .js-file_group{"data-index" => "#{image.index}"}
             = image.file_field :src, class: 'js-file'
             .js-remove 削除
-    = form.collection_select :prefecture_id, Prefecture.all, :id, :name
+    = form.collection_select :prefecture_id, Area.all, :id, :name
     = form.text_field :name, class: 'a', :placeholder => '場所の名前'
     = form.text_field :place, class: 'a', :placeholder => '地名'
     = form.text_field :text, class: 'a', :placeholder => 'text'
