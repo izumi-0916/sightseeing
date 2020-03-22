@@ -1,0 +1,9 @@
+.wrapper
+  = render "more/header"
+  .s-main
+    .s-main__box
+      .s-main__box--img
+        - @spot.images.each do |image|
+          %ul
+            %li.s-img
+              = image_tag image.src.url,size:"400x300"

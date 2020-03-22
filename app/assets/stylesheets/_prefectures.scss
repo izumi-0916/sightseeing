@@ -15,11 +15,12 @@
       margin: 0 auto;
       margin-top: 50px;
       display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
       .p-spot-box{
-        border: 1px solid;
+        border: 5px solid #3CCACE;
         margin-bottom: 40px;
+        margin: 10px;
+        background-color: white;
         &__text{
           &--name{
             text-align: center;
@@ -27,6 +28,13 @@
             font-weight: 500;
           }
         }
+        a{
+          text-decoration: none;
+          color: black;
+        }
+      }
+      .p-spot-box:hover{
+        opacity: 0.7;
       }
     }
     &--page{

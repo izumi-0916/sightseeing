@@ -10,10 +10,11 @@
       .p-main__contents--box
         - @spots.each do |spot|
           .p-spot-box
-            .p-spot-box__img
-              = image_tag spot.images.first.src.url,size:"220x180"
-            .p-spot-box__text
-              .p-spot-box__text--name
-                = spot.name
+            = link_to spot_path(spot.id) do
+              .p-spot-box__img
+                = image_tag spot.images.first.src.url,size:"220x180"
+              .p-spot-box__text
+                .p-spot-box__text--name
+                  = spot.name
       .p-main__contents--page
         = paginate(@spots)
