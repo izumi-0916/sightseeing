@@ -23,11 +23,31 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
+    @prefecture = Prefecture.find(@spot.prefecture_id)
+  end
+
+  def edit
+    @spot = Spot.find(params[:id])
+  end
+
+  def update
+    @spot = Spot.find(params[:id])
+    if @spot.update(spot_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    spot = Spot.find(params[:id])
+    spot.destroy
+    redirect_to user_path(current_user.id)
   end
 
   private
   def spot_params
-    params.require(:spot).permit(:prefecture_id, :name, :place, :text, :station, images_attributes: [:src, :_destroy, :id])
+    params.require(:spot).permit(:prefecture_id, :name, :place, :text, :station, images_attributes: [:src, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
 end

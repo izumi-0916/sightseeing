@@ -26,6 +26,18 @@
     text-align: center;
     color: white;
     font-size: 30px;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
+  }
+  &__mypage{
+    text-align: right;
+    padding: 0 20px 10px 0;
+    font-size: 20px;
+    a{
+      text-decoration: none;
+      color: white;
+    }
+    a:hover{
+      color: #C0C0C0;
+    }
   }
 }

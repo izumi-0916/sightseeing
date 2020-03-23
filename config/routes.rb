@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'spots#index'
-  resources :spots, only: [:index, :new, :create, :show]
+  resources :spots
   resources :prefectures, only: :show
+  resources :users, only: :show
 end

@@ -296,15 +296,4 @@
                       沖縄県
                   .spot-box__text--name
                     = spot.name
-    .main-box__form
-      .post
-        .post__title
-          おすすめスポットを投稿
-        .post__icon
-          %i.fa.fa-hand-point-right
-      = link_to new_spot_path,class: 'pen-icon' do
-        .icon-box
-          %i.fa.fa-pencil-alt
-  .footer
-    .footer__log
-      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+  = render "more/footer"

@@ -1,9 +1,50 @@
 .wrapper
   = render "more/header"
   .s-main
-    .s-main__box
-      .s-main__box--img
-        - @spot.images.each do |image|
-          %ul
-            %li.s-img
-              = image_tag image.src.url,size:"400x300"
+    .s-main__content
+      .s-main__content__name
+        = @spot.name
+      .s-main__content__box
+        .s-main__content__box__left
+          .s-main__content__box__left--img
+            - @spot.images.each do |image|
+              %ul
+                %li.s-img
+                  = image_tag image.src.url,size:"650x500"
+        .s-main__content__box__right
+          .s-main__content__box__right--prefecture
+            = link_to prefecture_path(@prefecture.id) do
+              = @prefecture.name
+          .s-main__content__box__right--place-title
+            地名
+          .s-main__content__box__right--place
+            = @spot.place
+          -if @spot.station?
+            .s-main__content__box__right--station
+              .station-title
+                最寄り駅
+              .station
+                = @spot.station
+      .text-box
+        .text-box__title
+          おすすめポイント⭐️
+        .text-box__text
+          = @spot.text
+      .post-imgs
+        .post-imgs__title
+          投稿写真一覧
+        .post-imgs__imgs
+          - @spot.images.each do |image|
+            %ul
+              %li.s-img
+                = image_tag image.src.url,size:"100x80"
+      - if user_signed_in? && current_user.id == @spot.user_id
+        .box-btn
+          = link_to edit_spot_path(@spot.id) do
+            %button#edit-btn
+              編集する
+          = link_to spot_path(@spot.id), method: :delete do
+            %button#delete-btn
+              削除する
+  = render "more/footer"
+
