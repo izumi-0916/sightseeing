@@ -4,7 +4,7 @@
   &__form{
     display: flex;
     justify-content: flex-end;
-    padding: 20px 20px 0 0;
+    padding: 40px 20px 40px 0;
     .post{
       display: flex;
       height: 80px;
@@ -31,8 +31,5 @@
       transform: translateY(-3px);
       transition: 0.3s;
     }
-  }
-  &__log{
-    
   }
 }

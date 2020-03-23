@@ -42,7 +42,6 @@ class SpotsController < ApplicationController
   def destroy
     spot = Spot.find(params[:id])
     spot.destroy
-    redirect_to user_path(current_user.id)
   end
 
   private
