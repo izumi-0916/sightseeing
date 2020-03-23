@@ -1,5 +1,5 @@
 .p-main{
-  min-height: 555px;
+  min-height: calc(100vh - 313px);
   &__title{
     display: flex;
     justify-content: center;
