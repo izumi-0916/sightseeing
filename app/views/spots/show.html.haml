@@ -38,6 +38,11 @@
             %ul
               %li.s-img
                 = image_tag image.src.url,size:"100x80"
+      .post-date
+        - if @spot.created_at == @spot.updated_at
+          = @spot.created_at.strftime("%Y年%m月%d日 %H:%M")
+        - else
+          = @spot.updated_at.strftime("%Y年%m月%d日 %H:%M")
       - if user_signed_in? && current_user.id == @spot.user_id
         .box-btn
           = link_to edit_spot_path(@spot.id) do

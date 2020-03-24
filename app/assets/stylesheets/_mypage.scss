@@ -4,27 +4,13 @@
   .mp-main{
     min-height: calc(100vh - 273px);
     &__title{
-      display: flex;
-      justify-content: space-between;
       background-color: #3CCACE;
       color: white;
       line-height: 80px;
-      &--name{
-        font-size: 40px;
-        height: 80px;
-        font-weight: 600;
-        padding-left: 30px;
-      }
-      &--log{
-        padding-right: 30px;
-        a{
-          text-decoration: none;
-          color: white;
-        }
-        a:hover{
-          text-decoration: underline;
-        }
-      }
+      font-size: 40px;
+      height: 80px;
+      font-weight: 600;
+      padding-left: 30px;
     }
     &__contents{
       &--title{

@@ -8,12 +8,11 @@
           Sightseeing
     .header__text
       観光スポット探しアプリ
+    .header__mypage
+      = link_to "ログアウト", destroy_user_session_path, method: :delete
   .mp-main
     .mp-main__title
-      .mp-main__title--name
-        = current_user.name + "のマイページ"
-      .mp-main__title--log
-        = link_to "ログアウト", destroy_user_session_path, method: :delete
+      = current_user.name + "のマイページ"
     .mp-main__contents
       .mp-main__contents--title
         投稿一覧
