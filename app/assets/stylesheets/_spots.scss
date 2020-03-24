@@ -113,6 +113,14 @@
                   &--icon{
                     display: flex;
                     margin-right: 10px;
+                    .likes{
+                      .iine{
+                        color: red;
+                      }
+                    }
+                    .likes-count{
+                      margin-left: 3px;
+                    }
                   }
                 }
                 &--name{

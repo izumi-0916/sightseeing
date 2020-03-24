@@ -297,9 +297,13 @@
                         沖縄県
                     .spot-box__text__box--icon
                       .likes
-                        %i.far.fa-heart
+                        - if spot.likes.find_by(user_id:current_user.id)
+                          .iine
+                            %i.fa.fa-heart
+                        - else
+                          %i.far.fa-heart
                       .likes-count
-                        1
+                        = spot.likes.count
                   .spot-box__text--name
                     = spot.name
   = render "more/footer"
