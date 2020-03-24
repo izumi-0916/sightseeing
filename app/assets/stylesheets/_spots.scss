@@ -2,10 +2,27 @@
   height: 100%;
   width: 100%;
   .main{
+    &__top{
+      display: table-cell;
+      vertical-align: middle;
+      height: 360px;
+      width: 100vw;
+      background-image: url(MIZ19819003_TP_V.jpg);
+      background-size: cover;
+      background-position: right center;
+      &__title{
+        display: flex;
+        justify-content: center;
+        font-size: 60px;
+      }
+      &__text{
+        text-align: center;
+      }
+    }
     .main-box{
       .area{     
         &__title{
-          background-color: #3CCACE;
+          background-color: #CEF9DC;
           font-size: 40px;
           line-height: 80px;
           height: 80px;

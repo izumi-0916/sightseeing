@@ -1,11 +1,24 @@
 .header
+  .header__top
+    .header__top--title
+      素敵な観光スポットをを探せるおすすめスポット専用投稿サイト
   .header__title
-    = link_to root_path do
-      .header__title--icon
-        %i.fa.fa-plane
-      .header__title--name
-        Sightseeing
-  .header__text
-    観光スポット探しアプリ
-  .header__mypage
-    = link_to "マイページ", user_path(current_user.id)
+    .header__title__box
+      .header__title__box__right
+        = link_to root_path do
+          .header__title__box__right__logo
+            .header__title__box__right__logo--icon
+              %i.fa.fa-plane
+            .header__title__box__right__logo--name
+              Sightseeing
+      .header__title__box__left
+        .header__title__box__left__search
+          = link_to "#" do
+            %i.fa.fa-search
+        .header__title__box__left__mypage
+          = link_to user_path(current_user.id) do
+            %i.fa.fa-user
+        .header__title__box__left__post
+          = link_to new_spot_path do
+            .header__title__box__left__post__name
+              新規投稿

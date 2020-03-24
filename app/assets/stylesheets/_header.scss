@@ -1,72 +1,92 @@
 .header{
-  background-image: url(photo0000-2959.jpg);
-  background-size: cover;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid #B1F9D0;
+  &__top{
+    background: #B1F9D0;
+    &--title{
+      margin: 0 auto;
+      width: 65%;
+      padding: 6px 0;
+      font-size: 12px;
+    }
+  }
   &__title{
-    padding-top: 10px;
-    color: white;
-    font-size: 25px;
-    &--icon{
-      float: left;
-      margin-left: 20px;
-    }
-    &--name{
-      float: left;
-      margin-left: 10px;
-    }
-    a{
-      color: white;
-      text-decoration: none;
-      display: inline-block;
-      position: relative;
-    }
-    a::after {
-      position: absolute;
-      bottom: -4px;
-      margin-left: 10px;
-      left: 0;
-      content: '';
-      width: 100%;
-      height: 2px;
-      background: white;
-      transform: scale(0, 1);
-      transform-origin: center top;
-      transition: transform .3s;
-    }
-    a:hover::after {
-      transform: scale(1, 1);
-    }
-  }
-  &__text{
-    clear: both;
-    text-align: center;
-    color: white;
-    font-size: 30px;
-    padding-bottom: 20px;
-  }
-  &__mypage{
-    text-align: right;
-    padding: 0 20px 10px 0;
-    font-size: 20px;
-    a{
-      color: white;
-      text-decoration: none;
-      display: inline-block;
-      position: relative;
-    }
-    a::after {
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      content: '';
-      width: 100%;
-      height: 2px;
-      background: white;
-      transform: scale(0, 1);
-      transform-origin: center top;
-      transition: transform .3s;
-    }
-    a:hover::after {
-      transform: scale(1, 1);
+    display: table-cell;
+    vertical-align: middle;
+    width: 100vw;
+    height: 56px;
+    &__box{
+      width: 65%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      &__right{
+        a{
+        color: black;
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+        }
+        a::after {
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          content: '';
+          width: 100%;
+          height: 2px;
+          background: black;
+          transform: scale(0, 1);
+          transform-origin: center top;
+          transition: transform .3s;
+        }
+        a:hover::after {
+          transform: scale(1, 1);
+        }
+        &__logo{
+          display: flex;
+          font-size: 24px;
+        }
+      }
+      &__left{
+        display: flex;
+        &__search{
+          font-size: 24px;
+          margin-right: 32px;
+          a{
+            color: black;
+          }
+        }
+        &__mypage{
+          font-size: 24px;
+          margin-right: 32px;
+          a{
+            color: black;
+          }
+        }
+        &__post{
+          transition: all 0.3s ease 0s;
+          a{
+            transition: all 0.3s ease 0s;
+            text-decoration: none;
+            color: #3CCACE;
+          }
+          a:hover{
+            color: white;
+          }
+          &__name{
+            font-size: 14px;
+            border: 1px solid #3CCACE;
+            padding: 8px 15px 5px;
+          }
+        }
+        &__post:hover{
+          background-color: #3CCACE;
+        }
+      }
     }
   }
 }

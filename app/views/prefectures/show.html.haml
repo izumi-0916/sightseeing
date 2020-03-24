@@ -16,6 +16,15 @@
               .p-spot-box__text
                 .p-spot-box__text--name
                   = spot.name
+                .p-spot-box__text--icon
+                  .likes
+                    - if spot.likes.find_by(user_id:current_user.id)
+                      .iine
+                        %i.fa.fa-heart
+                    - else
+                      %i.far.fa-heart
+                    .likes-count
+                      = spot.likes.count
       .p-main__contents--page
         = paginate(@spots)
   = render "more/footer"
