@@ -107,6 +107,14 @@
               &__text{
                 background-color: white;
                 padding: 20px 0;
+                &__box{
+                  display: flex;
+                  justify-content: space-between;
+                  &--icon{
+                    display: flex;
+                    margin-right: 10px;
+                  }
+                }
                 &--name{
                   text-align: center;
                 }
