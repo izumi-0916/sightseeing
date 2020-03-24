@@ -4,9 +4,9 @@
   top: 0;
   width: 100%;
   background-color: white;
-  border-bottom: 1px solid #B1F9D0;
+  border-bottom: 1px solid #BBFFFF;
   &__top{
-    background: #B1F9D0;
+    background: #BBFFFF;
     &--title{
       margin: 0 auto;
       width: 65%;
@@ -72,19 +72,21 @@
           a{
             transition: all 0.3s ease 0s;
             text-decoration: none;
-            color: #3CCACE;
+            color: #0000FF;
           }
           a:hover{
             color: white;
           }
           &__name{
             font-size: 14px;
-            border: 1px solid #3CCACE;
+            border: 1px solid #0000FF;
+            border-radius: 4px;
             padding: 8px 15px 5px;
           }
         }
         &__post:hover{
-          background-color: #3CCACE;
+          background-color: #0000FF;
+          border-radius: 4px;
         }
       }
     }

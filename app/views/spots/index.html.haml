@@ -12,201 +12,214 @@
     .main-box
       .area
         .area__title
-          エリアから探す
+          .area__title__icon
+            %i.fa.fa-search
+          .area__title__text
+            エリアから探す
         .area__place
           .area__place__box
-            .area__place__box--left
-              .area-title
-                .area-icon
-                  %i.fa.fa-search
-                .area-group
+            .area__place__box__left
+              .area-group
+                .area-title
                   北海道・東北
-              %ul.area-list
-                %li
-                  = link_to prefecture_path(1) do
-                    北海道
-                %li
-                  = link_to prefecture_path(2) do
-                    青森
-                %li
-                  = link_to prefecture_path(5) do
-                    秋田
-                %li
-                  = link_to prefecture_path(3) do
-                    岩手
-                %li
-                  = link_to prefecture_path(6) do
-                    山形
-                %li
-                  = link_to prefecture_path(4) do
-                    宮城
-                %li
-                  = link_to prefecture_path(7) do
-                    福島
-              .area-title
-                .area-icon
-                  %i.fa.fa-search
-                .area-group
+                %ul.area-list
+                  %li
+                    = link_to prefecture_path(1) do
+                      北海道
+                  %li
+                    = link_to prefecture_path(2) do
+                      青森
+                  %li
+                    = link_to prefecture_path(5) do
+                      秋田
+                  %li
+                    = link_to prefecture_path(3) do
+                      岩手
+                  %li
+                    = link_to prefecture_path(6) do
+                      山形
+                  %li
+                    = link_to prefecture_path(4) do
+                      宮城
+                  %li
+                    = link_to prefecture_path(7) do
+                      福島
+              .area-group
+                .area-title
                   中部
-              %ul.area-list
-                %li
-                  = link_to prefecture_path(23) do
-                    愛知
-                %li
-                  = link_to prefecture_path(21) do
-                    岐阜
-                %li
-                  = link_to prefecture_path(22) do
-                    静岡
-                %li
-                  = link_to prefecture_path(24) do
-                    三重
-                %li
-                  = link_to prefecture_path(15) do
-                    新潟
-                %li
-                  = link_to prefecture_path(19) do
-                    山梨
-                %li
-                  = link_to prefecture_path(20) do
-                    長野
-                %li
-                  = link_to prefecture_path(17) do
-                    石川
-                %li
-                  = link_to prefecture_path(16) do
-                    富山
-                %li
-                  = link_to prefecture_path(18) do
-                    福井
-              .area-title
-                .area-icon
-                  %i.fa.fa-search
-                .area-group
+                %ul.area-list
+                  %li
+                    = link_to prefecture_path(23) do
+                      愛知
+                  %li
+                    = link_to prefecture_path(21) do
+                      岐阜
+                  %li
+                    = link_to prefecture_path(22) do
+                      静岡
+                  %li
+                    = link_to prefecture_path(24) do
+                      三重
+                  %li
+                    = link_to prefecture_path(15) do
+                      新潟
+                  %li
+                    = link_to prefecture_path(19) do
+                      山梨
+                  %li
+                    = link_to prefecture_path(20) do
+                      長野
+                  %li
+                    = link_to prefecture_path(17) do
+                      石川
+                  %li
+                    = link_to prefecture_path(16) do
+                      富山
+                  %li
+                    = link_to prefecture_path(18) do
+                      福井
+              .area-group
+                .area-title
                   中国・四国
-              %ul.area-list
-                %li
-                  = link_to prefecture_path(33) do
-                    岡山
-                %li
-                  = link_to prefecture_path(34) do
-                    広島
-                %li
-                  = link_to prefecture_path(31) do
-                    鳥取
-                %li
-                  = link_to prefecture_path(32) do
-                    島根
-                %li
-                  = link_to prefecture_path(35) do
-                    山口
-                %li
-                  = link_to prefecture_path(37) do
-                    香川
-                %li
-                  = link_to prefecture_path(36) do
-                    徳島
-                %li
-                  = link_to prefecture_path(38) do
-                    愛媛
-                %li
-                  = link_to prefecture_path(39) do
-                    高知
-            .area__place__box--right
-              .area-title
-                .area-icon
-                  %i.fa.fa-search
-                .area-group
+                %ul.area-list
+                  %li
+                    = link_to prefecture_path(33) do
+                      岡山
+                  %li
+                    = link_to prefecture_path(34) do
+                      広島
+                  %li
+                    = link_to prefecture_path(31) do
+                      鳥取
+                  %li
+                    = link_to prefecture_path(32) do
+                      島根
+                  %li
+                    = link_to prefecture_path(35) do
+                      山口
+                  %li
+                    = link_to prefecture_path(37) do
+                      香川
+                  %li
+                    = link_to prefecture_path(36) do
+                      徳島
+                  %li
+                    = link_to prefecture_path(38) do
+                      愛媛
+                  %li
+                    = link_to prefecture_path(39) do
+                      高知
+            .area__place__box__right
+              .area-group
+                .area-title
                   関東
-              %ul.area-list
-                %li
-                  = link_to prefecture_path(13) do
-                    東京
-                %li
-                  = link_to prefecture_path(14) do
-                    神奈川
-                %li
-                  = link_to prefecture_path(11) do
-                    埼玉
-                %li
-                  = link_to prefecture_path(12) do
-                    千葉
-                %li
-                  = link_to prefecture_path(9) do
-                    栃木
-                %li
-                  = link_to prefecture_path(8) do
-                    茨城
-                %li
-                  = link_to prefecture_path(10) do
-                    群馬
-              .area-title
-                .area-icon
-                  %i.fa.fa-search
-                .area-group
+                %ul.area-list
+                  %li
+                    = link_to prefecture_path(13) do
+                      東京
+                  %li
+                    = link_to prefecture_path(14) do
+                      神奈川
+                  %li
+                    = link_to prefecture_path(11) do
+                      埼玉
+                  %li
+                    = link_to prefecture_path(12) do
+                      千葉
+                  %li
+                    = link_to prefecture_path(9) do
+                      栃木
+                  %li
+                    = link_to prefecture_path(8) do
+                      茨城
+                  %li
+                    = link_to prefecture_path(10) do
+                      群馬
+              .area-group
+                .area-title
                   関西
-              %ul.area-list
-                %li
-                  = link_to prefecture_path(27) do
-                    大阪
-                %li
-                  = link_to prefecture_path(28) do
-                    兵庫
-                %li
-                  = link_to prefecture_path(26) do
-                    京都
-                %li
-                  = link_to prefecture_path(25) do
-                    滋賀
-                %li
-                  = link_to prefecture_path(29) do
-                    奈良
-                %li
-                  = link_to prefecture_path(30) do
-                    和歌山
-              .area-title
-                .area-icon
-                  %i.fa.fa-search
-                .area-group
+                %ul.area-list
+                  %li
+                    = link_to prefecture_path(27) do
+                      大阪
+                  %li
+                    = link_to prefecture_path(28) do
+                      兵庫
+                  %li
+                    = link_to prefecture_path(26) do
+                      京都
+                  %li
+                    = link_to prefecture_path(25) do
+                      滋賀
+                  %li
+                    = link_to prefecture_path(29) do
+                      奈良
+                  %li
+                    = link_to prefecture_path(30) do
+                      和歌山
+              .area-group
+                .area-title
                   九州・沖縄
-              %ul.area-list
-                %li
-                  = link_to prefecture_path(40) do
-                    福岡
-                %li
-                  = link_to prefecture_path(41) do
-                    佐賀
-                %li
-                  = link_to prefecture_path(42) do
-                    長崎
-                %li
-                  = link_to prefecture_path(43) do
-                    熊本
-                %li
-                  = link_to prefecture_path(44) do
-                    大分
-                %li
-                  = link_to prefecture_path(45) do
-                    宮崎
-                %li
-                  = link_to prefecture_path(46) do
-                    鹿児島
-                %li
-                  = link_to prefecture_path(47) do
-                    沖縄
-          .map
-            =image_tag'map-japan-deform-prefecture-02.png', size: "600x500", class: "img"
+                %ul.area-list
+                  %li
+                    = link_to prefecture_path(40) do
+                      福岡
+                  %li
+                    = link_to prefecture_path(41) do
+                      佐賀
+                  %li
+                    = link_to prefecture_path(42) do
+                      長崎
+                  %li
+                    = link_to prefecture_path(43) do
+                      熊本
+                  %li
+                    = link_to prefecture_path(44) do
+                      大分
+                  %li
+                    = link_to prefecture_path(45) do
+                      宮崎
+                  %li
+                    = link_to prefecture_path(46) do
+                      鹿児島
+                  %li
+                    = link_to prefecture_path(47) do
+                      沖縄
+    - if @count.count >= 10 && @count.count < 50
+      .main-box__news
+        .main-box__news__title
+          .main-box__news__title__1
+            news
+          .main-box__news__title__2
+            スポット投稿数が10件をこえました🎉
+    - elsif @count.count >= 50 && @count.count < 100
+      .main-box__news
+        .main-box__news__title
+          .main-box__news__title__1
+            news
+          .main-box__news__title__2
+            スポット投稿数が50件をこえました🎉
+    - elsif @count.count >= 100
+      .main-box__news
+        .main-box__news__title
+          .main-box__news__title__1
+            news
+          .main-box__news__title__2
+            スポット投稿数が100件をこえました🎉
     .main-box__new
-      .new-title
-        新着スポット
+      .main-box__new__title
+        %span.main-box__new__title__tag＃
+        .main-box__new__title__text
+          新着
       .new-contents
         .new-contents__box
           - @spots.each do |spot|
             .spot-box
               = link_to spot_path(spot.id) do
-                .spot-box__img
-                  = image_tag spot.images.first.src.url,size:"220x180"
+                = image_tag spot.images.first.src.url,size:"220x180",class: "spot-box__img"
                 .spot-box__text
+                  .spot-box__text--name
+                    = spot.name
                   .spot-box__text__box
                     .spot-box__text__box--area
                       - if spot.prefecture_id == 1
@@ -312,6 +325,108 @@
                           %i.far.fa-heart
                       .likes-count
                         = spot.likes.count
+      .main-box__new
+      .main-box__new__title
+        %span.main-box__new__title__tag＃
+        .main-box__new__title__text
+          北海道
+      .new-contents
+        .new-contents__box
+          - @hokkaidou.each do |spot|
+            .spot-box
+              = link_to spot_path(spot.id) do
+                = image_tag spot.images.first.src.url,size:"220x180",class: "spot-box__img"
+                .spot-box__text
                   .spot-box__text--name
                     = spot.name
+                  .spot-box__text__box
+                    .spot-box__text__box--area
+                      
+                    .spot-box__text__box--icon
+                      .likes
+                        - if spot.likes.find_by(user_id:current_user.id)
+                          .iine
+                            %i.fa.fa-heart
+                        - else
+                          %i.far.fa-heart
+                      .likes-count
+                        = spot.likes.count
+      .main-box__new
+      .main-box__new__title
+        %span.main-box__new__title__tag＃
+        .main-box__new__title__text
+          東京
+      .new-contents
+        .new-contents__box
+          - @tokyo.each do |spot|
+            .spot-box
+              = link_to spot_path(spot.id) do
+                = image_tag spot.images.first.src.url,size:"220x180",class: "spot-box__img"
+                .spot-box__text
+                  .spot-box__text--name
+                    = spot.name
+                  .spot-box__text__box
+                    .spot-box__text__box--area
+                      
+                    .spot-box__text__box--icon
+                      .likes
+                        - if spot.likes.find_by(user_id:current_user.id)
+                          .iine
+                            %i.fa.fa-heart
+                        - else
+                          %i.far.fa-heart
+                      .likes-count
+                        = spot.likes.count
+      .main-box__new
+      .main-box__new__title
+        %span.main-box__new__title__tag＃
+        .main-box__new__title__text
+          大阪
+      .new-contents
+        .new-contents__box
+          - @oosaka.each do |spot|
+            .spot-box
+              = link_to spot_path(spot.id) do
+                = image_tag spot.images.first.src.url,size:"220x180",class: "spot-box__img"
+                .spot-box__text
+                  .spot-box__text--name
+                    = spot.name
+                  .spot-box__text__box
+                    .spot-box__text__box--area
+                      
+                    .spot-box__text__box--icon
+                      .likes
+                        - if spot.likes.find_by(user_id:current_user.id)
+                          .iine
+                            %i.fa.fa-heart
+                        - else
+                          %i.far.fa-heart
+                      .likes-count
+                        = spot.likes.count
+      .main-box__new
+      .main-box__new__title
+        %span.main-box__new__title__tag＃
+        .main-box__new__title__text
+          沖縄
+      .new-contents
+        .new-contents__box
+          - @okinawa.each do |spot|
+            .spot-box
+              = link_to spot_path(spot.id) do
+                = image_tag spot.images.first.src.url,size:"220x180",class: "spot-box__img"
+                .spot-box__text
+                  .spot-box__text--name
+                    = spot.name
+                  .spot-box__text__box
+                    .spot-box__text__box--area
+                      
+                    .spot-box__text__box--icon
+                      .likes
+                        - if spot.likes.find_by(user_id:current_user.id)
+                          .iine
+                            %i.fa.fa-heart
+                        - else
+                          %i.far.fa-heart
+                      .likes-count
+                        = spot.likes.count
   = render "more/footer"

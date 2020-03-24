@@ -2,7 +2,16 @@ class SpotsController < ApplicationController
 
   def index
     @images = Image.all
-    @spots = Spot.all.order("created_at DESC").limit(10)
+    @spots = Spot.all.order("created_at DESC").limit(4)
+    @count = Spot.all
+    prefecture = Prefecture.find(1)
+    @hokkaidou = prefecture.spots.order("created_at DESC").limit(4)
+    prefecture = Prefecture.find(13)
+    @tokyo = prefecture.spots.order("created_at DESC").limit(4)
+    prefecture = Prefecture.find(27)
+    @oosaka = prefecture.spots.order("created_at DESC").limit(4)
+    prefecture = Prefecture.find(47)
+    @okinawa = prefecture.spots.order("created_at DESC").limit(4)
   end
   
   def new
