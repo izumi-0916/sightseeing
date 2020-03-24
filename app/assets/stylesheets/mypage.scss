@@ -49,6 +49,22 @@
             color: black;
           }
           &__text{
+            &__box{
+              display: flex;
+              justify-content: space-between;
+              &--icon{
+                display: flex;
+                margin-right: 10px;
+                .likes{
+                  .iine{
+                    color: red;
+                  }
+                }
+                .likes-count{
+                  margin-left: 3px;
+                }
+              }
+            }
             &--name{
               text-align: center;
               font-size: 20px;
@@ -62,7 +78,7 @@
       }
       &--page{
         text-align: center;
-        margin: 20px 0;
+        margin: 20px 0 50px ;
         a{
           text-decoration: none;
           color: black;

@@ -46,5 +46,8 @@
           = link_to spot_path(@spot.id), method: :delete do
             %button#delete-btn
               削除する
+      - else 
+        .likes
+          = render "more/like"
   = render "more/footer"
 

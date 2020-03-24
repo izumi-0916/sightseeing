@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :spots
+  has_many :likes, dependent: :destroy
+  has_many :liked_spots, through: :likes, source: :spot
 
   validates :name, presence: true, uniqueness: true
   validates :email, format: { with: /\A\S+@\S+\.\S+\z/ }

@@ -3,6 +3,8 @@ class Spot < ApplicationRecord
   belongs_to :prefecture
   belongs_to :user
   has_many :images, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :liked_users, through: :likes, source: :user
   accepts_nested_attributes_for :images, allow_destroy: true
   belongs_to_active_hash :area, foreign_key: true
 
