@@ -16,9 +16,15 @@
           = link_to "#" do
             %i.fa.fa-search
         .header__title__box__left__mypage
-          = link_to user_path(current_user.id) do
-            %i.fa.fa-user
+          - if user_signed_in?
+            = link_to user_path(current_user.id) do
+              %i.fa.fa-user
         .header__title__box__left__post
-          = link_to new_spot_path do
-            .header__title__box__left__post__name
-              新規投稿
+          - if user_signed_in?
+            = link_to new_spot_path do
+              .header__title__box__left__post__name
+                新規投稿
+          - else
+            = link_to new_user_session_path do
+              .header__title__box__left__post__name
+                はじめる

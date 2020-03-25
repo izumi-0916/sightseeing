@@ -1,10 +1,11 @@
 .footer
-  .footer__form
-    .post
-      .post__title
-        おすすめスポットを投稿
-      .post__icon
-        %i.fa.fa-hand-point-right
-    = link_to new_spot_path,class: 'pen-icon' do
-      .icon-box
-        %i.fa.fa-pencil-alt
+  .footer__log
+    .footer__log__top
+      = link_to root_path do
+        .footer__log__top__box
+          .footer__log__top__box__icon
+            %i.fa.fa-plane
+          .footer__log__top__box__text
+            Sightseeing
+    .footer__log__bottom
+      ©️2020 Sightseeing

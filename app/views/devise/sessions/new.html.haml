@@ -1,12 +1,5 @@
 .wrapper
-  .header
-    .header__title
-      .header__title--icon
-        %i.fa.fa-plane
-      .header__title--name
-        Sightseeing
-    .header__text
-      観光スポット探しアプリ
+  = render "more/header"
   .signin
     .signin__main
       .signin__main__center
@@ -14,16 +7,19 @@
           ログイン
         .signin__main__center__box
           = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-            .field.email
-              = f.email_field :email,placeholder: "メールアドレス", autofocus: true, autocomplete: "email"
-            .field.password
-              = f.password_field :password,placeholder: "パスワード", autocomplete: "current-password"
-            .actions
-              .submit
-                = f.submit "ログイン"
-              = render "devise/shared/links"
-            
-
+            .form-item
+              %label.form-item__title
+                メールアドレス
+                = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-item__title__form"
+            .form-item
+              %label.form-item__title
+                パスワード
+                = f.password_field :password, autocomplete: "current-password", class: "form-item__title__form"
+            .submit-btn
+              = f.submit "ログイン"
+        .sign-up
+          = render "devise/shared/links"
+  = render "more/footer"
 
 
 
