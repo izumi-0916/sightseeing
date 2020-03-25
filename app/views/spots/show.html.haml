@@ -2,57 +2,219 @@
   = render "more/header"
   .s-main
     .s-main__content
-      .s-main__content__name
-        = @spot.name
-      .s-main__content__box
-        .s-main__content__box__left
-          .s-main__content__box__left--img
-            - @spot.images.each do |image|
-              %ul
-                %li.s-img
-                  = image_tag image.src.url,size:"650x500"
-        .s-main__content__box__right
-          .s-main__content__box__right--prefecture
-            = link_to prefecture_path(@prefecture.id) do
-              = @prefecture.name
-          .s-main__content__box__right--place-title
-            地名
-          .s-main__content__box__right--place
-            = @spot.place
-          -if @spot.station?
-            .s-main__content__box__right--station
-              .station-title
-                最寄り駅
-              .station
-                = @spot.station
-      .text-box
-        .text-box__title
-          おすすめポイント⭐️
-        .text-box__text
-          = @spot.text
-      .post-imgs
-        .post-imgs__title
-          投稿写真一覧
-        .post-imgs__imgs
-          - @spot.images.each do |image|
+      .s-main__content__left
+        .s-main__content__left__box
+          .s-main__content__left__box__top
             %ul
-              %li.s-img
-                = image_tag image.src.url,size:"100x80"
-      .post-date
-        - if @spot.created_at == @spot.updated_at
-          = @spot.created_at.strftime("%Y年%m月%d日 %H:%M")
+              - @spot.images.each do |image|
+                %li.s-img
+                  = image_tag image.src.url,size:"600x400"
+            - if !Like.exists?(user_id:current_user.id,spot_id:@spot.id)
+              = link_to spot_likes_path(@spot),method: :post, class:"heart" do
+                .s-heart
+                  .iine
+                    %i.fa.fa-heart
+            - else
+              = link_to spot_like_path(@spot),method: :delete, class:"heart" do
+                .s-heart
+                  .uniine
+                    %i.fa.fa-heart
+          .s-main__content__left__box__info
+            .s-spot-name
+              = @spot.name
+            .s-icons
+              .s-icons__comment
+                %i.fa.fa-comment-dots
+                .count
+                  1
+              .s-icons__heart
+                %i.fa.fa-heart
+                .count
+                  = @spot.likes.count
+            .s-spot-prefecture
+              .s-spot-prefecture--text
+                都道府県
+              .s-spot-prefecture--name
+                = link_to prefecture_path(@prefecture.id) do
+                  = @prefecture.name
+            .s-spot-place
+              .s-spot-place__text
+                地名
+              .s-spot-place__area
+                = @spot.place
+            - if @spot.station?
+              .s-spot-station
+                .s-spot-station__title
+                  最寄り駅
+                .s-spot-station__name
+                  = @spot.station
+          .text-box
+            .text-box__title
+              おすすめポイント⭐️
+            .text-box__text
+              = @spot.text
+          .post-imgs
+            .post-imgs__title
+              投稿写真一覧
+            .post-imgs__imgs
+              %ul
+                - @spot.images.each do |image|
+                  %li.s-img
+                    = image_tag image.src.url,size:"196x147"
+      .s-main__content__right
+        - if current_user.id == @spot.user_id
+          .box-btn
+            = link_to edit_spot_path(@spot.id) do
+              %button.btn
+                編集する
+            = link_to spot_path(@spot.id), method: :delete do
+              %button.btn
+                削除する
         - else
-          = @spot.updated_at.strftime("%Y年%m月%d日 %H:%M")
-      - if user_signed_in? && current_user.id == @spot.user_id
-        .box-btn
-          = link_to edit_spot_path(@spot.id) do
-            %button#edit-btn
-              編集する
-          = link_to spot_path(@spot.id), method: :delete do
-            %button#delete-btn
-              削除する
-      - else 
-        .likes
-          = render "more/like"
+          .like-item
+            .like-item__text
+              お気に入り
+            - if !Like.exists?(user_id:current_user.id,spot_id:@spot.id)
+              = link_to spot_likes_path(@spot),method: :post, class:"heart" do
+                .like-item__icon
+                  .iine
+                    %i.fa.fa-heart
+            - else
+              = link_to spot_like_path(@spot),method: :delete, class:"heart" do
+                .like-item__icon
+                  .uniine
+                    %i.fa.fa-heart
+          .s-main__content__right__contents
+            .s-main__content__right__contents__title
+              新着
+            .s-main__content__right__contents__new
+              - @spots.each do |spot|
+                = link_to spot_path(spot.id) do
+                  .spot-box
+                    .spot-box__item
+                      = image_tag spot.images.first.src.url,size:"100x75",class: "spot-box__item__img"
+                      .spot-box__item__right
+                        .spot-box__item__right__text
+                          = spot.name
+                        .spot-box__item__right__a
+                          .spot-box__item__right__a__prefecture
+                            - if spot.prefecture_id == 1
+                              北海道
+                            - elsif spot.prefecture_id == 2
+                              青森県
+                            - elsif spot.prefecture_id == 3
+                              岩手県
+                            - elsif spot.prefecture_id == 4
+                              宮城県
+                            - elsif spot.prefecture_id == 5
+                              秋田県
+                            - elsif spot.prefecture_id == 6
+                              山形県
+                            - elsif spot.prefecture_id == 7
+                              福島県
+                            - elsif spot.prefecture_id == 8
+                              茨城県
+                            - elsif spot.prefecture_id == 9
+                              栃木県
+                            - elsif spot.prefecture_id == 10
+                              群馬県
+                            - elsif spot.prefecture_id == 11
+                              埼玉県
+                            - elsif spot.prefecture_id == 12
+                              千葉県
+                            - elsif spot.prefecture_id == 13
+                              東京都
+                            - elsif spot.prefecture_id == 14
+                              神奈川県
+                            - elsif spot.prefecture_id == 15
+                              新潟県
+                            - elsif spot.prefecture_id == 16
+                              富山県
+                            - elsif spot.prefecture_id == 17
+                              石川県
+                            - elsif spot.prefecture_id == 18
+                              福井県
+                            - elsif spot.prefecture_id == 19
+                              山梨県
+                            - elsif spot.prefecture_id == 20
+                              長野県
+                            - elsif spot.prefecture_id == 21
+                              岐阜県
+                            - elsif spot.prefecture_id == 22
+                              静岡県
+                            - elsif spot.prefecture_id == 23
+                              愛知県
+                            - elsif spot.prefecture_id == 24
+                              三重県
+                            - elsif spot.prefecture_id == 25
+                              滋賀県
+                            - elsif spot.prefecture_id == 26
+                              京都府
+                            - elsif spot.prefecture_id == 27
+                              大阪府
+                            - elsif spot.prefecture_id == 28
+                              兵庫県
+                            - elsif spot.prefecture_id == 29
+                              奈良県
+                            - elsif spot.prefecture_id == 30
+                              和歌山県
+                            - elsif spot.prefecture_id == 31
+                              鳥取県
+                            - elsif spot.prefecture_id == 32
+                              島根県
+                            - elsif spot.prefecture_id == 33
+                              岡山県
+                            - elsif spot.prefecture_id == 34
+                              広島県
+                            - elsif spot.prefecture_id == 35
+                              山口県
+                            - elsif spot.prefecture_id == 36
+                              徳島県
+                            - elsif spot.prefecture_id == 37
+                              香川県
+                            - elsif spot.prefecture_id == 38
+                              愛媛県
+                            - elsif spot.prefecture_id == 39
+                              高知県
+                            - elsif spot.prefecture_id == 40
+                              福岡県
+                            - elsif spot.prefecture_id == 41
+                              佐賀県
+                            - elsif spot.prefecture_id == 42
+                              長崎県
+                            - elsif spot.prefecture_id == 43
+                              熊本県
+                            - elsif spot.prefecture_id == 44
+                              大分県
+                            - elsif spot.prefecture_id == 45
+                              宮崎県
+                            - elsif spot.prefecture_id == 46
+                              鹿児島県
+                            - elsif spot.prefecture_id == 47
+                              沖縄県
+                          .spot-box__item__right__a__icon
+                            %i.fa.fa-comment-dots
+                            .count
+                              1
+          .s-main__content__right__contents
+            .s-main__content__right__contents__title
+              同じ都道府県のスポット
+            .s-main__content__right__contents__new
+              - @same.each do |spot|
+                = link_to spot_path(spot.id) do
+                  .spot-box
+                    .spot-box__item
+                      = image_tag spot.images.first.src.url,size:"100x75",class: "spot-box__item__img"
+                      .spot-box__item__right
+                        .spot-box__item__right__text
+                          = spot.name
+                        .spot-box__item__right__a
+                          .spot-box__item__right__a__prefecture
+                            = @prefecture.name
+                          .spot-box__item__right__a__icon
+                            %i.fa.fa-comment-dots
+                            .count
+                              1
   = render "more/footer"
+
 

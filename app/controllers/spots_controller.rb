@@ -32,7 +32,9 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
+    @spots = Spot.all.order("created_at DESC").limit(3)
     @prefecture = Prefecture.find(@spot.prefecture_id)
+    @same = @prefecture.spots.order("created_at DESC").limit(3)
   end
 
   def edit

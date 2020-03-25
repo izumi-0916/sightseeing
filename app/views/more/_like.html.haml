@@ -1,5 +1,0 @@
-.likes__box
-  -if !Like.exists?(user_id:current_user.id,spot_id:@spot.id)
-    = link_to "お気に入り", spot_likes_path(@spot),method: :post, class:"heart"
-  - else
-    = link_to "お気に入り解除",spot_like_path(@spot),method: :delete, class:"heart"
