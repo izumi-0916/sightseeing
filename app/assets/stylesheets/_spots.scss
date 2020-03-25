@@ -158,6 +158,8 @@
             display: flex;
             .spot-box{
               margin-right: 42px;
+              border-radius: 12px;
+              box-shadow: 0 0 4px #eae6dc;
               &__img{
                 border-radius: 12px 12px 0 0;
               }

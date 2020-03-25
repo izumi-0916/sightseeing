@@ -1,18 +1,17 @@
 .wrapper
   = render "more/header"
   .p-main
-    .p-main__title
-      .p-main__title--name
-        = @name
-      .p-main__title--name
-        の投稿一覧
     .p-main__contents
-      .p-main__contents--box
+      .p-main__contents__title
+        .p-main__contents__title--name
+          = @name
+        .p-main__contents__title--name
+          の投稿一覧
+      .p-main__contents__box
         - @spots.each do |spot|
           .p-spot-box
             = link_to spot_path(spot.id) do
-              .p-spot-box__img
-                = image_tag spot.images.first.src.url,size:"220x180"
+              = image_tag spot.images.first.src.url,size:"220x180",class: "p-spot-box__img"
               .p-spot-box__text
                 .p-spot-box__text--name
                   = spot.name
