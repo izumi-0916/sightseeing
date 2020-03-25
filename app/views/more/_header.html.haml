@@ -17,7 +17,7 @@
             %i.fa.fa-search
         .header__title__box__left__mypage
           - if user_signed_in?
-            = link_to user_path(current_user.id) do
+            = link_to user_path(current_user.id),data: {"turbolinks" => false} do
               %i.fa.fa-user
         .header__title__box__left__post
           - if user_signed_in?
@@ -28,3 +28,8 @@
             = link_to new_user_session_path do
               .header__title__box__left__post__name
                 はじめる
+        .header__title__box__left__post
+          - if user_signed_in?
+            = link_to  destroy_user_session_path, method: :delete do
+              .header__title__box__left__post__name
+                ログアウト

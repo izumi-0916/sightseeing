@@ -1,28 +1,9 @@
 .mp-main{
   min-height: calc(100vh - 247px);
   background-color: #f7f7f7;
-  &__mypage{
-    text-align: right;
-    padding: 20px 20px 0 0;
-    transition: all 0.3s ease 0s;
-    &__log{
-      transition: all 0.3s ease 0s;
-      text-decoration: none;
-      color: #0000FF;
-      font-size: 14px;
-      border: 1px solid #0000FF;
-      border-radius: 4px;
-      padding: 8px 15px 5px;
-    }
-    &__log:hover{
-      color: white;
-      background-color: #0000FF;
-      border-radius: 4px;
-    }
-  }
   &__user{
     text-align: center;
-    padding-top: 20px;
+    padding-top: 50px;
     &__logo{
       height: 80px;
       width: 80px;

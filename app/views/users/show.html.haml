@@ -1,8 +1,6 @@
 .mp-wrapper
   = render "more/header"
   .mp-main
-    .mp-main__mypage
-      = link_to "ログアウト", destroy_user_session_path, method: :delete, class:"mp-main__mypage__log"
     .mp-main__user
       .mp-main__user__logo
         = image_tag "user.png",size: "50x50",class: "mp-main__user__logo__icon"
@@ -246,4 +244,4 @@
                     = spot.name
           .mp-page
             = paginate(@spots)
-    = render "more/footer"
+  = render "more/footer"
