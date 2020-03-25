@@ -1,44 +1,88 @@
-.mp-wrapper{
-  height: 100%;
-  width: 100%;
-  .mp-main{
-    min-height: calc(100vh - 273px);
-    &__title{
-      background-color: #3CCACE;
-      color: white;
-      line-height: 80px;
-      font-size: 40px;
-      height: 80px;
-      font-weight: 600;
-      padding-left: 30px;
+.mp-main{
+  min-height: calc(100vh - 247px);
+  background-color: #f7f7f7;
+  &__mypage{
+    text-align: right;
+    padding: 20px 20px 0 0;
+    transition: all 0.3s ease 0s;
+    &__log{
+      transition: all 0.3s ease 0s;
+      text-decoration: none;
+      color: #0000FF;
+      font-size: 14px;
+      border: 1px solid #0000FF;
+      border-radius: 4px;
+      padding: 8px 15px 5px;
     }
-    &__contents{
-      &--title{
-        text-align: center;
-        padding-top: 30px;
-        font-size: 30px;
+    &__log:hover{
+      color: white;
+      background-color: #0000FF;
+      border-radius: 4px;
+    }
+  }
+  &__user{
+    text-align: center;
+    padding-top: 20px;
+    &__logo{
+      height: 80px;
+      width: 80px;
+      margin: 0 auto;
+      background-color: gray;
+      border-radius: 50%;
+      &__icon{
+        margin-top: 12px;
       }
-      &__box{
-        background-color: #f5f5f5;
-        width: 1000px;
-        margin: 0 auto;
-        margin-top: 50px;
+    }
+    &__name{
+      font-size: 20px;
+      margin-top: 8px;
+    }
+  }
+  &__container{
+    width: 600px;
+    margin: 40px auto;
+    &__icons{
+      display: flex;
+      .menu-item{
+        font-size: 24px;
+        width: 50%;
+        text-align: center;
+        border-bottom: 2px solid #eae6dc;
+        padding-bottom: 10px;
+        cursor: pointer;
+      }
+      .active{
+        color: #8c2a2a;
+        border-bottom: 2px solid #8c2a2a;
+      }
+    }
+    .contents{
+      margin-top: 30px;
+      .content{
+        display: none;
         display: flex;
+        justify-content: space-between;
         flex-wrap: wrap;
         .spot-box{
-          border: 5px solid #3CCACE;
-          margin-bottom: 40px;
-          margin: 10px;
-          background-color: white;
-          a{
-            text-decoration: none;
-            color: black;
+          margin-bottom: 15px;
+          border-radius: 12px;
+          box-shadow: 0 0 4px #eae6dc;
+          &__img{
+            border-radius: 12px 12px 0 0;
           }
           &__text{
+            background-color: white;
+            margin-top: -6px;
+            padding: 12px;
+            border-radius: 0 0 12px 12px;
             &__box{
               display: flex;
               justify-content: space-between;
-              &--icon{
+              &__area{
+                font-size: 15px;
+                font-weight: bold;
+              }
+              &__icon{
                 display: flex;
                 margin-right: 10px;
                 .likes{
@@ -51,29 +95,37 @@
                 }
               }
             }
-            &--name{
-              text-align: center;
-              font-size: 20px;
-              font-weight: 500;
+            &__name{
+              margin: 12px 0;
+              font-size: 15px;
+              word-wrap: break-word;
             }
+          }
+          a{
+            text-decoration: none;
+            color: black;
           }
         }
         .spot-box:hover{
           opacity: 0.7;
         }
       }
-      &--page{
-        text-align: center;
-        margin: 20px 0 50px ;
-        a{
-          text-decoration: none;
-          color: black;
-        }
-        a:hover{
-          color: #3CCACE;
-          text-decoration: underline;
-        }
+      .hidden{
+        display: none;
       }
     }
+  }
+}
+
+.mp-page{
+  text-align: center;
+  width: 600px;
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  a:hover{
+    color: #3CCACE;
+    text-decoration: underline;
   }
 }

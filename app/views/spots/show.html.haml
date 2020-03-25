@@ -9,16 +9,17 @@
               - @spot.images.each do |image|
                 %li.s-img
                   = image_tag image.src.url,size:"600x400"
-            - if !Like.exists?(user_id:current_user.id,spot_id:@spot.id)
-              = link_to spot_likes_path(@spot),method: :post, class:"heart" do
-                .s-heart
-                  .iine
-                    %i.fa.fa-heart
-            - else
-              = link_to spot_like_path(@spot),method: :delete, class:"heart" do
-                .s-heart
-                  .uniine
-                    %i.fa.fa-heart
+            - unless current_user.id == @spot.user_id
+              - if !Like.exists?(user_id:current_user.id,spot_id:@spot.id)
+                = link_to spot_likes_path(@spot),method: :post, class:"heart" do
+                  .s-heart
+                    .iine
+                      %i.fa.fa-heart
+              - else
+                = link_to spot_like_path(@spot),method: :delete, class:"heart" do
+                  .s-heart
+                    .uniine
+                      %i.fa.fa-heart
           .s-main__content__left__box__info
             .s-spot-name
               = @spot.name

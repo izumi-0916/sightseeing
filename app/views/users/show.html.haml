@@ -1,246 +1,249 @@
 .mp-wrapper
   = render "more/header"
   .mp-main
-    .mp-main__title
-      = current_user.name + "のマイページ"
-    .mp-main__contents
-      .mp-main__contents--title
-        投稿一覧
-      .mp-main__contents__box
-        - @spots.each do |spot|
-          .spot-box
-            = link_to spot_path(spot.id) do
-              .spot-box__img
-                = image_tag spot.images.first.src.url,size:"220x180"
-              .spot-box__text
-                .spot-box__text__box
-                  .spot-box__text--area
-                    - if spot.prefecture_id == 1
-                      北海道
-                    - elsif spot.prefecture_id == 2
-                      青森県
-                    - elsif spot.prefecture_id == 3
-                      岩手県
-                    - elsif spot.prefecture_id == 4
-                      宮城県
-                    - elsif spot.prefecture_id == 5
-                      秋田県
-                    - elsif spot.prefecture_id == 6
-                      山形県
-                    - elsif spot.prefecture_id == 7
-                      福島県
-                    - elsif spot.prefecture_id == 8
-                      茨城県
-                    - elsif spot.prefecture_id == 9
-                      栃木県
-                    - elsif spot.prefecture_id == 10
-                      群馬県
-                    - elsif spot.prefecture_id == 11
-                      埼玉県
-                    - elsif spot.prefecture_id == 12
-                      千葉県
-                    - elsif spot.prefecture_id == 13
-                      東京都
-                    - elsif spot.prefecture_id == 14
-                      神奈川県
-                    - elsif spot.prefecture_id == 15
-                      新潟県
-                    - elsif spot.prefecture_id == 16
-                      富山県
-                    - elsif spot.prefecture_id == 17
-                      石川県
-                    - elsif spot.prefecture_id == 18
-                      福井県
-                    - elsif spot.prefecture_id == 19
-                      山梨県
-                    - elsif spot.prefecture_id == 20
-                      長野県
-                    - elsif spot.prefecture_id == 21
-                      岐阜県
-                    - elsif spot.prefecture_id == 22
-                      静岡県
-                    - elsif spot.prefecture_id == 23
-                      愛知県
-                    - elsif spot.prefecture_id == 24
-                      三重県
-                    - elsif spot.prefecture_id == 25
-                      滋賀県
-                    - elsif spot.prefecture_id == 26
-                      京都府
-                    - elsif spot.prefecture_id == 27
-                      大阪府
-                    - elsif spot.prefecture_id == 28
-                      兵庫県
-                    - elsif spot.prefecture_id == 29
-                      奈良県
-                    - elsif spot.prefecture_id == 30
-                      和歌山県
-                    - elsif spot.prefecture_id == 31
-                      鳥取県
-                    - elsif spot.prefecture_id == 32
-                      島根県
-                    - elsif spot.prefecture_id == 33
-                      岡山県
-                    - elsif spot.prefecture_id == 34
-                      広島県
-                    - elsif spot.prefecture_id == 35
-                      山口県
-                    - elsif spot.prefecture_id == 36
-                      徳島県
-                    - elsif spot.prefecture_id == 37
-                      香川県
-                    - elsif spot.prefecture_id == 38
-                      愛媛県
-                    - elsif spot.prefecture_id == 39
-                      高知県
-                    - elsif spot.prefecture_id == 40
-                      福岡県
-                    - elsif spot.prefecture_id == 41
-                      佐賀県
-                    - elsif spot.prefecture_id == 42
-                      長崎県
-                    - elsif spot.prefecture_id == 43
-                      熊本県
-                    - elsif spot.prefecture_id == 44
-                      大分県
-                    - elsif spot.prefecture_id == 45
-                      宮崎県
-                    - elsif spot.prefecture_id == 46
-                      鹿児島県
-                    - elsif spot.prefecture_id == 47
-                      沖縄県
-                  .spot-box__text__box--icon
-                    .likes
-                      - if spot.likes.find_by(user_id:current_user.id)
-                        .iine
-                          %i.fa.fa-heart
-                      - else
-                        %i.far.fa-heart
-                    .likes-count
-                      = spot.likes.count
-                .spot-box__text--name
-                  = spot.name
-      .mp-main__contents--page
-        = paginate(@spots)
-    .mp-main__contents
-      .mp-main__contents--title
-        お気に入り一覧
-      .mp-main__contents__box
-        - @likes.each do |like| 
-        - spot = Spot.find_by(id: like.spot_id) 
-          .spot-box
-            = link_to spot_path(spot.id) do
-              .spot-box__img
-                = image_tag spot.images.first.src.url,size:"220x180"
-              .spot-box__text
-                .spot-box__text__box
-                  .spot-box__text--area
-                    - if spot.prefecture_id == 1
-                      北海道
-                    - elsif spot.prefecture_id == 2
-                      青森県
-                    - elsif spot.prefecture_id == 3
-                      岩手県
-                    - elsif spot.prefecture_id == 4
-                      宮城県
-                    - elsif spot.prefecture_id == 5
-                      秋田県
-                    - elsif spot.prefecture_id == 6
-                      山形県
-                    - elsif spot.prefecture_id == 7
-                      福島県
-                    - elsif spot.prefecture_id == 8
-                      茨城県
-                    - elsif spot.prefecture_id == 9
-                      栃木県
-                    - elsif spot.prefecture_id == 10
-                      群馬県
-                    - elsif spot.prefecture_id == 11
-                      埼玉県
-                    - elsif spot.prefecture_id == 12
-                      千葉県
-                    - elsif spot.prefecture_id == 13
-                      東京都
-                    - elsif spot.prefecture_id == 14
-                      神奈川県
-                    - elsif spot.prefecture_id == 15
-                      新潟県
-                    - elsif spot.prefecture_id == 16
-                      富山県
-                    - elsif spot.prefecture_id == 17
-                      石川県
-                    - elsif spot.prefecture_id == 18
-                      福井県
-                    - elsif spot.prefecture_id == 19
-                      山梨県
-                    - elsif spot.prefecture_id == 20
-                      長野県
-                    - elsif spot.prefecture_id == 21
-                      岐阜県
-                    - elsif spot.prefecture_id == 22
-                      静岡県
-                    - elsif spot.prefecture_id == 23
-                      愛知県
-                    - elsif spot.prefecture_id == 24
-                      三重県
-                    - elsif spot.prefecture_id == 25
-                      滋賀県
-                    - elsif spot.prefecture_id == 26
-                      京都府
-                    - elsif spot.prefecture_id == 27
-                      大阪府
-                    - elsif spot.prefecture_id == 28
-                      兵庫県
-                    - elsif spot.prefecture_id == 29
-                      奈良県
-                    - elsif spot.prefecture_id == 30
-                      和歌山県
-                    - elsif spot.prefecture_id == 31
-                      鳥取県
-                    - elsif spot.prefecture_id == 32
-                      島根県
-                    - elsif spot.prefecture_id == 33
-                      岡山県
-                    - elsif spot.prefecture_id == 34
-                      広島県
-                    - elsif spot.prefecture_id == 35
-                      山口県
-                    - elsif spot.prefecture_id == 36
-                      徳島県
-                    - elsif spot.prefecture_id == 37
-                      香川県
-                    - elsif spot.prefecture_id == 38
-                      愛媛県
-                    - elsif spot.prefecture_id == 39
-                      高知県
-                    - elsif spot.prefecture_id == 40
-                      福岡県
-                    - elsif spot.prefecture_id == 41
-                      佐賀県
-                    - elsif spot.prefecture_id == 42
-                      長崎県
-                    - elsif spot.prefecture_id == 43
-                      熊本県
-                    - elsif spot.prefecture_id == 44
-                      大分県
-                    - elsif spot.prefecture_id == 45
-                      宮崎県
-                    - elsif spot.prefecture_id == 46
-                      鹿児島県
-                    - elsif spot.prefecture_id == 47
-                      沖縄県
-                  .spot-box__text__box--icon
-                    .likes
-                      - if spot.likes.find_by(user_id:current_user.id)
-                        .iine
-                          %i.fa.fa-heart
-                      - else
-                        %i.far.fa-heart
-                    .likes-count
-                      = spot.likes.count
-                .spot-box__text--name
-                  = spot.name
-      .mp-main__contents--page
-        = paginate(@likes)
-  .header__mypage
-    = link_to "ログアウト", destroy_user_session_path, method: :delete
+    .mp-main__mypage
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class:"mp-main__mypage__log"
+    .mp-main__user
+      .mp-main__user__logo
+        = image_tag "user.png",size: "50x50",class: "mp-main__user__logo__icon"
+      .mp-main__user__name
+        = current_user.name
+    .mp-main__container
+      %ul.mp-main__container__icons
+        %li#post.menu-item.active
+          %i.fa.fa-th
+        %li#heart.menu-item
+          %i.fa.fa-heart
+      %ul.contents
+        %li.content.hidden
+          - @likes.each do |like| 
+          - spot = Spot.find_by(id: like.spot_id) 
+            .spot-box
+              = link_to spot_path(spot.id) do
+                = image_tag spot.images.first.src.url,size:"192x120",class: "spot-box__img"
+                .spot-box__text
+                  .spot-box__text__box
+                    .spot-box__text__area
+                      - if spot.prefecture_id == 1
+                        北海道
+                      - elsif spot.prefecture_id == 2
+                        青森県
+                      - elsif spot.prefecture_id == 3
+                        岩手県
+                      - elsif spot.prefecture_id == 4
+                        宮城県
+                      - elsif spot.prefecture_id == 5
+                        秋田県
+                      - elsif spot.prefecture_id == 6
+                        山形県
+                      - elsif spot.prefecture_id == 7
+                        福島県
+                      - elsif spot.prefecture_id == 8
+                        茨城県
+                      - elsif spot.prefecture_id == 9
+                        栃木県
+                      - elsif spot.prefecture_id == 10
+                        群馬県
+                      - elsif spot.prefecture_id == 11
+                        埼玉県
+                      - elsif spot.prefecture_id == 12
+                        千葉県
+                      - elsif spot.prefecture_id == 13
+                        東京都
+                      - elsif spot.prefecture_id == 14
+                        神奈川県
+                      - elsif spot.prefecture_id == 15
+                        新潟県
+                      - elsif spot.prefecture_id == 16
+                        富山県
+                      - elsif spot.prefecture_id == 17
+                        石川県
+                      - elsif spot.prefecture_id == 18
+                        福井県
+                      - elsif spot.prefecture_id == 19
+                        山梨県
+                      - elsif spot.prefecture_id == 20
+                        長野県
+                      - elsif spot.prefecture_id == 21
+                        岐阜県
+                      - elsif spot.prefecture_id == 22
+                        静岡県
+                      - elsif spot.prefecture_id == 23
+                        愛知県
+                      - elsif spot.prefecture_id == 24
+                        三重県
+                      - elsif spot.prefecture_id == 25
+                        滋賀県
+                      - elsif spot.prefecture_id == 26
+                        京都府
+                      - elsif spot.prefecture_id == 27
+                        大阪府
+                      - elsif spot.prefecture_id == 28
+                        兵庫県
+                      - elsif spot.prefecture_id == 29
+                        奈良県
+                      - elsif spot.prefecture_id == 30
+                        和歌山県
+                      - elsif spot.prefecture_id == 31
+                        鳥取県
+                      - elsif spot.prefecture_id == 32
+                        島根県
+                      - elsif spot.prefecture_id == 33
+                        岡山県
+                      - elsif spot.prefecture_id == 34
+                        広島県
+                      - elsif spot.prefecture_id == 35
+                        山口県
+                      - elsif spot.prefecture_id == 36
+                        徳島県
+                      - elsif spot.prefecture_id == 37
+                        香川県
+                      - elsif spot.prefecture_id == 38
+                        愛媛県
+                      - elsif spot.prefecture_id == 39
+                        高知県
+                      - elsif spot.prefecture_id == 40
+                        福岡県
+                      - elsif spot.prefecture_id == 41
+                        佐賀県
+                      - elsif spot.prefecture_id == 42
+                        長崎県
+                      - elsif spot.prefecture_id == 43
+                        熊本県
+                      - elsif spot.prefecture_id == 44
+                        大分県
+                      - elsif spot.prefecture_id == 45
+                        宮崎県
+                      - elsif spot.prefecture_id == 46
+                        鹿児島県
+                      - elsif spot.prefecture_id == 47
+                        沖縄県
+                    .spot-box__text__box__icon
+                      .likes
+                        - if spot.likes.find_by(user_id:current_user.id)
+                          .iine
+                            %i.fa.fa-heart
+                        - else
+                          %i.far.fa-heart
+                      .likes-count
+                        = spot.likes.count
+                  .spot-box__text__name
+                    = spot.name
+          .mp-page
+            = paginate(@likes)
+        %li.content
+          - @spots.each do |spot|
+            .spot-box
+              = link_to spot_path(spot.id) do
+                = image_tag spot.images.first.src.url,size:"192x120",class: "spot-box__img"
+                .spot-box__text
+                  .spot-box__text__box
+                    .spot-box__text__area
+                      - if spot.prefecture_id == 1
+                        北海道
+                      - elsif spot.prefecture_id == 2
+                        青森県
+                      - elsif spot.prefecture_id == 3
+                        岩手県
+                      - elsif spot.prefecture_id == 4
+                        宮城県
+                      - elsif spot.prefecture_id == 5
+                        秋田県
+                      - elsif spot.prefecture_id == 6
+                        山形県
+                      - elsif spot.prefecture_id == 7
+                        福島県
+                      - elsif spot.prefecture_id == 8
+                        茨城県
+                      - elsif spot.prefecture_id == 9
+                        栃木県
+                      - elsif spot.prefecture_id == 10
+                        群馬県
+                      - elsif spot.prefecture_id == 11
+                        埼玉県
+                      - elsif spot.prefecture_id == 12
+                        千葉県
+                      - elsif spot.prefecture_id == 13
+                        東京都
+                      - elsif spot.prefecture_id == 14
+                        神奈川県
+                      - elsif spot.prefecture_id == 15
+                        新潟県
+                      - elsif spot.prefecture_id == 16
+                        富山県
+                      - elsif spot.prefecture_id == 17
+                        石川県
+                      - elsif spot.prefecture_id == 18
+                        福井県
+                      - elsif spot.prefecture_id == 19
+                        山梨県
+                      - elsif spot.prefecture_id == 20
+                        長野県
+                      - elsif spot.prefecture_id == 21
+                        岐阜県
+                      - elsif spot.prefecture_id == 22
+                        静岡県
+                      - elsif spot.prefecture_id == 23
+                        愛知県
+                      - elsif spot.prefecture_id == 24
+                        三重県
+                      - elsif spot.prefecture_id == 25
+                        滋賀県
+                      - elsif spot.prefecture_id == 26
+                        京都府
+                      - elsif spot.prefecture_id == 27
+                        大阪府
+                      - elsif spot.prefecture_id == 28
+                        兵庫県
+                      - elsif spot.prefecture_id == 29
+                        奈良県
+                      - elsif spot.prefecture_id == 30
+                        和歌山県
+                      - elsif spot.prefecture_id == 31
+                        鳥取県
+                      - elsif spot.prefecture_id == 32
+                        島根県
+                      - elsif spot.prefecture_id == 33
+                        岡山県
+                      - elsif spot.prefecture_id == 34
+                        広島県
+                      - elsif spot.prefecture_id == 35
+                        山口県
+                      - elsif spot.prefecture_id == 36
+                        徳島県
+                      - elsif spot.prefecture_id == 37
+                        香川県
+                      - elsif spot.prefecture_id == 38
+                        愛媛県
+                      - elsif spot.prefecture_id == 39
+                        高知県
+                      - elsif spot.prefecture_id == 40
+                        福岡県
+                      - elsif spot.prefecture_id == 41
+                        佐賀県
+                      - elsif spot.prefecture_id == 42
+                        長崎県
+                      - elsif spot.prefecture_id == 43
+                        熊本県
+                      - elsif spot.prefecture_id == 44
+                        大分県
+                      - elsif spot.prefecture_id == 45
+                        宮崎県
+                      - elsif spot.prefecture_id == 46
+                        鹿児島県
+                      - elsif spot.prefecture_id == 47
+                        沖縄県
+                    .spot-box__text__box__icon
+                      .likes
+                        - if spot.likes.find_by(user_id:current_user.id)
+                          .iine
+                            %i.fa.fa-heart
+                        - else
+                          %i.far.fa-heart
+                      .likes-count
+                        = spot.likes.count
+                  .spot-box__text__name
+                    = spot.name
+          .mp-page
+            = paginate(@spots)
+    = render "more/footer"
