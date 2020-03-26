@@ -23,7 +23,7 @@ class SpotsController < ApplicationController
   def create
     @spot = Spot.new(spot_params)
     if @spot.save
-      redirect_to root_path
+      redirect_to root_path, notice: '投稿しました'
     else
       @spot.images.new
       render :new
@@ -45,7 +45,7 @@ class SpotsController < ApplicationController
   def update
     @spot = Spot.find(params[:id])
     if @spot.update(spot_params)
-      redirect_to root_path
+      redirect_to spot_path(params[:id]), notice: '投稿を編集しました'
     else
       render :edit
     end
