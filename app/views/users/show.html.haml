@@ -20,6 +20,8 @@
               = link_to spot_path(spot.id) do
                 = image_tag spot.images.first.src.url,size:"192x120",class: "spot-box__img"
                 .spot-box__text
+                  .spot-box__text--name
+                    = spot.name
                   .spot-box__text__box
                     .spot-box__text__area
                       - if spot.prefecture_id == 1
@@ -116,25 +118,31 @@
                         鹿児島県
                       - elsif spot.prefecture_id == 47
                         沖縄県
-                    .spot-box__text__box__icon
-                      .likes
-                        - if spot.likes.find_by(user_id:current_user.id)
-                          .iine
-                            %i.fa.fa-heart
-                        - else
-                          %i.far.fa-heart
-                      .likes-count
-                        = spot.likes.count
-                  .spot-box__text__name
-                    = spot.name
+                    .spot-box__text__box--icon
+                      .spot-box__text__box--icon__comment
+                        .comment
+                          %i.fa.fa-comment-dots
+                        .comment-count
+                          = spot.comments.count
+                      .spot-box__text__box--icon__like
+                        .like
+                          - if spot.likes.find_by(user_id:current_user.id)
+                            .iine
+                              %i.fa.fa-heart
+                          - else
+                            %i.far.fa-heart
+                        .like-count
+                          = spot.likes.count
         %li.content
           - @spots.each do |spot|
             .spot-box
               = link_to spot_path(spot.id) do
                 = image_tag spot.images.first.src.url,size:"192x120",class: "spot-box__img"
                 .spot-box__text
+                  .spot-box__text--name
+                    = spot.name
                   .spot-box__text__box
-                    .spot-box__text__area
+                    .spot-box__text__box--area
                       - if spot.prefecture_id == 1
                         北海道
                       - elsif spot.prefecture_id == 2
@@ -229,15 +237,20 @@
                         鹿児島県
                       - elsif spot.prefecture_id == 47
                         沖縄県
-                    .spot-box__text__box__icon
-                      .likes
-                        - if spot.likes.find_by(user_id:current_user.id)
-                          .iine
-                            %i.fa.fa-heart
-                        - else
-                          %i.far.fa-heart
-                      .likes-count
-                        = spot.likes.count
-                  .spot-box__text__name
-                    = spot.name
+                      .spot-box__text__box__icon
+                    .spot-box__text__box--icon
+                      .spot-box__text__box--icon__comment
+                        .comment
+                          %i.fa.fa-comment-dots
+                        .comment-count
+                          = spot.comments.count
+                      .spot-box__text__box--icon__like
+                        .like
+                          - if spot.likes.find_by(user_id:current_user.id)
+                            .iine
+                              %i.fa.fa-heart
+                          - else
+                            %i.far.fa-heart
+                        .like-count
+                          = spot.likes.count
   = render "more/footer"

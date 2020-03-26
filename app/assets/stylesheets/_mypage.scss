@@ -57,30 +57,42 @@
             margin-top: -6px;
             padding: 12px;
             border-radius: 0 0 12px 12px;
+            &--name{
+              height: 40px;
+              font-size: 15px;
+              font-weight: bold;
+            }
             &__box{
               display: flex;
               justify-content: space-between;
-              &__area{
+              &--area{
                 font-size: 15px;
-                font-weight: bold;
               }
-              &__icon{
+              &--icon{
                 display: flex;
                 margin-right: 10px;
-                .likes{
-                  .iine{
-                    color: red;
+                &__comment{
+                  display: flex;
+                  margin-right: 5px;
+                  .comment{
+                    color: #5f6367;
+                  }
+                  .comment-count{
+                    margin-left: 3px;
                   }
                 }
-                .likes-count{
-                  margin-left: 3px;
+                &__like{
+                  display: flex;
+                  .like{
+                    .iine{
+                      color: red;
+                    }
+                  }
+                  .like-count{
+                    margin-left: 3px;
+                  }
                 }
               }
-            }
-            &__name{
-              margin: 12px 0;
-              font-size: 15px;
-              word-wrap: break-word;
             }
           }
           a{
