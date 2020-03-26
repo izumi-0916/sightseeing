@@ -275,6 +275,7 @@
           .spot-box{
             margin-bottom: 8px;
             &__item{
+              width: 320px;
               display: flex;
               &__img{
                 margin-right: 12px;
@@ -282,6 +283,11 @@
               &__right{
                 &__text{
                   margin-top: 5px;
+                  width: 210px;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  font-family: Arial;
                 }
                 &__a{
                   display: flex;

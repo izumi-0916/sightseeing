@@ -28,9 +28,14 @@
           border-radius: 0 0 12px 12px;
           &--name{
             height: 40px;
+            width: 196px;
             margin-bottom: 12px;
             font-size: 15px;
             font-weight: bold;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-family: Arial;
           }
           &__box{
             display: flex;
