@@ -73,20 +73,20 @@
           a{
             transition: all 0.3s ease 0s;
             text-decoration: none;
-            color: #0000FF;
+            color: #3CCACE;
           }
           a:hover{
             color: white;
           }
           &__name{
             font-size: 14px;
-            border: 1px solid #0000FF;
+            border: 1px solid #3CCACE;
             border-radius: 4px;
             padding: 8px 15px 5px;
           }
         }
         &__post:hover{
-          background-color: #0000FF;
+          background-color: #3CCACE;
           border-radius: 4px;
         }
       }
