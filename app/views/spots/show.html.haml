@@ -62,6 +62,26 @@
                 - @spot.images.each do |image|
                   %li.s-img
                     = image_tag image.src.url,size:"196x147"
+          .comment-box
+            .comment-box__title
+              .comment-box__title__text
+                口コミ
+              .comment-box__title__post
+                = link_to  new_spot_comment_path(@spot.id) do
+                  .comment-box__title__post__name
+                    投稿する
+            .comment-box__content
+              - @comments.each do |comment|
+                .comment-box__content__item
+                  .comment-box__content__item__img
+                    = image_tag "user.png",size: "30x30",class: "c-img"
+                  .comment-box__content__item__info
+                    .c-title
+                      = comment.title
+                    .c-text
+                      = comment.text
+                    .c-date
+                      = comment.created_at.strftime("%Y.%m.%d %H:%M")
       .s-main__content__right
         - if current_user.id == @spot.user_id
           .box-btn

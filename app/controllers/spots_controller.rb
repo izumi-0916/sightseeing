@@ -35,6 +35,7 @@ class SpotsController < ApplicationController
     @spots = Spot.all.order("created_at DESC").limit(3)
     @prefecture = Prefecture.find(@spot.prefecture_id)
     @same = @prefecture.spots.order("created_at DESC").limit(3)
+    @comments = @spot.comments.includes(:user)
   end
 
   def edit

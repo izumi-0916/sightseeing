@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'spots#index'
   resources :spots do
     resources :likes, only: [:create, :destroy]
+    resources :comments, only: [:new, :create]
   end
   resources :prefectures, only: :show
   resources :users, only: :show

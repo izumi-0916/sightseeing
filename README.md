@@ -51,6 +51,7 @@ belongs_to :user
 ## comments table
 |Column|Type|Options|
 |------|----|-------|
+|title|string|null: false|
 |text|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |spot_id|integer|null: false, foreign_key: true|

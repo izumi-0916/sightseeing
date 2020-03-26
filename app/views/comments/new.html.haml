@@ -1,0 +1,32 @@
+.wrapper
+  = render "more/header"
+  .c-main
+    = form_with(model: [@spot, @comment]) do |form| 
+      .c-main__center
+        .c-main__center__form
+          .c-main__center__form__title
+            新規口コミ投稿
+            .error
+              - if @comment.errors.any?
+                .comment__errors
+                  %h2= "#{@comment.errors.full_messages.count}件のエラーが発生しました。"
+                  %ul
+                    - @comment.errors.full_messages.each do |message|
+                      %li= message
+          .c-form-box
+            .c-form-box__title
+              .c-form-box__title__top
+                .title-name
+                  タイトル
+                %span.need
+                  必須
+              = form.text_field :title, class: 'form', :placeholder => '例)とても綺麗です'
+            .c-form-box__text
+              .c-form-box__text__top
+                .title-name
+                  コメント
+                %span.need
+                  必須
+              = form.text_area :text, class: 'form-text', :placeholder => '「行った感想・レビュー」を書いてください', rows: "10"
+            = form.submit "投稿" , class: 'form-btn'
+  = render "more/footer"

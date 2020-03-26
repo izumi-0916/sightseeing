@@ -215,7 +215,7 @@
         .new-contents__box
           - @spots.each do |spot|
             .spot-box
-              = link_to spot_path(spot.id) do
+              = link_to spot_path(spot.id),data: {"turbolinks" => false} do
                 = image_tag spot.images.first.src.url,size:"220x180",class: "spot-box__img"
                 .spot-box__text
                   .spot-box__text--name
@@ -334,7 +334,7 @@
         .new-contents__box
           - @hokkaidou.each do |spot|
             .spot-box
-              = link_to spot_path(spot.id) do
+              = link_to spot_path(spot.id),data: {"turbolinks" => false} do
                 = image_tag spot.images.first.src.url,size:"220x180",class: "spot-box__img"
                 .spot-box__text
                   .spot-box__text--name
@@ -360,7 +360,7 @@
         .new-contents__box
           - @tokyo.each do |spot|
             .spot-box
-              = link_to spot_path(spot.id) do
+              = link_to spot_path(spot.id),data: {"turbolinks" => false} do
                 = image_tag spot.images.first.src.url,size:"220x180",class: "spot-box__img"
                 .spot-box__text
                   .spot-box__text--name
@@ -386,7 +386,7 @@
         .new-contents__box
           - @oosaka.each do |spot|
             .spot-box
-              = link_to spot_path(spot.id) do
+              = link_to spot_path(spot.id),data: {"turbolinks" => false} do
                 = image_tag spot.images.first.src.url,size:"220x180",class: "spot-box__img"
                 .spot-box__text
                   .spot-box__text--name
@@ -412,7 +412,7 @@
         .new-contents__box
           - @okinawa.each do |spot|
             .spot-box
-              = link_to spot_path(spot.id) do
+              = link_to spot_path(spot.id),data: {"turbolinks" => false} do
                 = image_tag spot.images.first.src.url,size:"220x180",class: "spot-box__img"
                 .spot-box__text
                   .spot-box__text--name

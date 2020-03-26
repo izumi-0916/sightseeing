@@ -8,7 +8,7 @@
             新規スポット投稿
             .error
               - if @spot.errors.any?
-                .item__errors
+                .spot__errors
                   %h2= "#{@spot.errors.full_messages.count}件のエラーが発生しました。"
                   %ul
                     - @spot.errors.full_messages.each do |message|
