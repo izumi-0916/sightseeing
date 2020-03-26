@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      redirect_to spot_path(params[:spot_id])
+      redirect_to spot_path(params[:spot_id]), notice: 'コメントを投稿しました'
     else
       render :new
     end

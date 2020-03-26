@@ -9,17 +9,23 @@
               - @spot.images.each do |image|
                 %li.s-img
                   = image_tag image.src.url,size:"600x400"
-            - unless current_user.id == @spot.user_id
-              - if !Like.exists?(user_id:current_user.id,spot_id:@spot.id)
-                = link_to spot_likes_path(@spot),method: :post, class:"heart" do
-                  .s-heart
-                    .iine
-                      %i.fa.fa-heart
-              - else
-                = link_to spot_like_path(@spot),method: :delete, class:"heart" do
-                  .s-heart
-                    .uniine
-                      %i.fa.fa-heart
+            - if user_signed_in?
+              - unless current_user.id == @spot.user_id
+                - if !Like.exists?(user_id:current_user.id,spot_id:@spot.id)
+                  = link_to spot_likes_path(@spot),method: :post, class:"heart" do
+                    .s-heart
+                      .iine
+                        %i.fa.fa-heart
+                - else
+                  = link_to spot_like_path(@spot),method: :delete, class:"heart" do
+                    .s-heart
+                      .uniine
+                        %i.fa.fa-heart
+            - else
+              = link_to new_user_session_path, class:"heart" do
+                .s-heart
+                  .iine
+                    %i.fa.fa-heart
           .s-main__content__left__box__info
             .s-spot-name
               = @spot.name
@@ -67,9 +73,14 @@
               .comment-box__title__text
                 口コミ
               .comment-box__title__post
-                = link_to  new_spot_comment_path(@spot.id) do
-                  .comment-box__title__post__name
-                    投稿する
+                - if user_signed_in?
+                  = link_to new_spot_comment_path(@spot.id) do
+                    .comment-box__title__post__name
+                      投稿する
+                - else
+                  = link_to new_user_session_path do
+                    .comment-box__title__post__name
+                      投稿する
             .comment-box__content
               - @comments.each do |comment|
                 .comment-box__content__item
@@ -83,7 +94,7 @@
                     .c-date
                       = comment.created_at.strftime("%Y.%m.%d %H:%M")
       .s-main__content__right
-        - if current_user.id == @spot.user_id
+        - if user_signed_in? && current_user.id == @spot.user_id
           .box-btn
             = link_to edit_spot_path(@spot.id) do
               %button.btn
@@ -95,15 +106,21 @@
           .like-item
             .like-item__text
               お気に入り
-            - if !Like.exists?(user_id:current_user.id,spot_id:@spot.id)
-              = link_to spot_likes_path(@spot),method: :post, class:"heart" do
+            - if user_signed_in?
+              - if !Like.exists?(user_id:current_user.id,spot_id:@spot.id)
+                = link_to spot_likes_path(@spot),method: :post, class:"heart" do
+                  .like-item__icon
+                    .iine
+                      %i.fa.fa-heart
+              - else
+                = link_to spot_like_path(@spot),method: :delete, class:"heart" do
+                  .like-item__icon
+                    .uniine
+                      %i.fa.fa-heart
+            - else
+              = link_to new_user_session_path, class:"heart" do
                 .like-item__icon
                   .iine
-                    %i.fa.fa-heart
-            - else
-              = link_to spot_like_path(@spot),method: :delete, class:"heart" do
-                .like-item__icon
-                  .uniine
                     %i.fa.fa-heart
           .s-main__content__right__contents
             .s-main__content__right__contents__title

@@ -318,9 +318,12 @@
                         沖縄県
                     .spot-box__text__box--icon
                       .likes
-                        - if spot.likes.find_by(user_id:current_user.id)
-                          .iine
-                            %i.fa.fa-heart
+                        - if user_signed_in?
+                          - if spot.likes.find_by(user_id:current_user.id)
+                            .iine
+                              %i.fa.fa-heart
+                          - else
+                            %i.far.fa-heart
                         - else
                           %i.far.fa-heart
                       .likes-count
@@ -344,9 +347,12 @@
                       
                     .spot-box__text__box--icon
                       .likes
-                        - if spot.likes.find_by(user_id:current_user.id)
-                          .iine
-                            %i.fa.fa-heart
+                        - if user_signed_in?
+                          - if spot.likes.find_by(user_id:current_user.id)
+                            .iine
+                              %i.fa.fa-heart
+                          - else
+                            %i.far.fa-heart
                         - else
                           %i.far.fa-heart
                       .likes-count
@@ -370,9 +376,12 @@
                       
                     .spot-box__text__box--icon
                       .likes
-                        - if spot.likes.find_by(user_id:current_user.id)
-                          .iine
-                            %i.fa.fa-heart
+                        - if user_signed_in?
+                          - if spot.likes.find_by(user_id:current_user.id)
+                            .iine
+                              %i.fa.fa-heart
+                          - else
+                            %i.far.fa-heart
                         - else
                           %i.far.fa-heart
                       .likes-count
@@ -396,9 +405,12 @@
                       
                     .spot-box__text__box--icon
                       .likes
-                        - if spot.likes.find_by(user_id:current_user.id)
-                          .iine
-                            %i.fa.fa-heart
+                        - if user_signed_in?
+                          - if spot.likes.find_by(user_id:current_user.id)
+                            .iine
+                              %i.fa.fa-heart
+                          - else
+                            %i.far.fa-heart
                         - else
                           %i.far.fa-heart
                       .likes-count
@@ -422,9 +434,12 @@
                       
                     .spot-box__text__box--icon
                       .likes
-                        - if spot.likes.find_by(user_id:current_user.id)
-                          .iine
-                            %i.fa.fa-heart
+                        - if user_signed_in?
+                          - if spot.likes.find_by(user_id:current_user.id)
+                            .iine
+                              %i.fa.fa-heart
+                          - else
+                            %i.far.fa-heart
                         - else
                           %i.far.fa-heart
                       .likes-count
