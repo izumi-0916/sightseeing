@@ -144,11 +144,14 @@
       &__new{
         width: 70%;
         margin: 0 auto;
-        margin-top: 40px;
         &__title{
           display: flex;
           font-size: 24px;
-          margin-bottom: 12px;
+          margin: 40px 0 12px ;
+          a{
+            text-decoration: none;
+            color: black;
+          }
           &__tag{
             color: #3CCACE;
           }
@@ -183,13 +186,26 @@
                   &--icon{
                     display: flex;
                     margin-right: 10px;
-                    .likes{
-                      .iine{
-                        color: red;
+                    &__comment{
+                      display: flex;
+                      margin-right: 5px;
+                      .comment{
+                        color: #5f6367;
+                      }
+                      .comment-count{
+                        margin-left: 3px;
                       }
                     }
-                    .likes-count{
-                      margin-left: 3px;
+                    &__like{
+                      display: flex;
+                      .like{
+                        .iine{
+                          color: red;
+                        }
+                      }
+                      .like-count{
+                        margin-left: 3px;
+                      }
                     }
                   }
                 }

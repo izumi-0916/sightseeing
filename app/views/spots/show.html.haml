@@ -233,7 +233,7 @@
                           .spot-box__item__right__a__icon
                             %i.fa.fa-comment-dots
                             .count
-                              1
+                              = spot.comments.count
           .s-main__content__right__contents
             .s-main__content__right__contents__title
               同じ都道府県のスポット
@@ -252,7 +252,7 @@
                           .spot-box__item__right__a__icon
                             %i.fa.fa-comment-dots
                             .count
-                              1
+                              = spot.comments.count
   = render "more/footer"
 
 

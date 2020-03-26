@@ -317,22 +317,28 @@
                       - elsif spot.prefecture_id == 47
                         沖縄県
                     .spot-box__text__box--icon
-                      .likes
-                        - if user_signed_in?
-                          - if spot.likes.find_by(user_id:current_user.id)
-                            .iine
-                              %i.fa.fa-heart
+                      .spot-box__text__box--icon__comment
+                        .comment
+                          %i.fa.fa-comment-dots
+                        .comment-count
+                          = spot.comments.count
+                      .spot-box__text__box--icon__like
+                        .like
+                          - if user_signed_in?
+                            - if spot.likes.find_by(user_id:current_user.id)
+                              .iine
+                                %i.fa.fa-heart
+                            - else
+                              %i.far.fa-heart
                           - else
                             %i.far.fa-heart
-                        - else
-                          %i.far.fa-heart
-                      .likes-count
-                        = spot.likes.count
-      .main-box__new
+                        .like-count
+                          = spot.likes.count
       .main-box__new__title
         %span.main-box__new__title__tag＃
         .main-box__new__title__text
-          北海道
+          = link_to prefecture_path(1) do
+            北海道
       .new-contents
         .new-contents__box
           - @hokkaidou.each do |spot|
@@ -344,24 +350,30 @@
                     = spot.name
                   .spot-box__text__box
                     .spot-box__text__box--area
-                      
+                      北海道
                     .spot-box__text__box--icon
-                      .likes
-                        - if user_signed_in?
-                          - if spot.likes.find_by(user_id:current_user.id)
-                            .iine
-                              %i.fa.fa-heart
+                      .spot-box__text__box--icon__comment
+                        .comment
+                          %i.fa.fa-comment-dots
+                        .comment-count
+                          = spot.comments.count
+                      .spot-box__text__box--icon__like
+                        .like
+                          - if user_signed_in?
+                            - if spot.likes.find_by(user_id:current_user.id)
+                              .iine
+                                %i.fa.fa-heart
+                            - else
+                              %i.far.fa-heart
                           - else
                             %i.far.fa-heart
-                        - else
-                          %i.far.fa-heart
-                      .likes-count
-                        = spot.likes.count
-      .main-box__new
+                        .like-count
+                          = spot.likes.count
       .main-box__new__title
         %span.main-box__new__title__tag＃
         .main-box__new__title__text
-          東京
+          = link_to prefecture_path(13) do
+            東京
       .new-contents
         .new-contents__box
           - @tokyo.each do |spot|
@@ -373,24 +385,30 @@
                     = spot.name
                   .spot-box__text__box
                     .spot-box__text__box--area
-                      
+                      東京
                     .spot-box__text__box--icon
-                      .likes
-                        - if user_signed_in?
-                          - if spot.likes.find_by(user_id:current_user.id)
-                            .iine
-                              %i.fa.fa-heart
+                      .spot-box__text__box--icon__comment
+                        .comment
+                          %i.fa.fa-comment-dots
+                        .comment-count
+                          = spot.comments.count
+                      .spot-box__text__box--icon__like
+                        .like
+                          - if user_signed_in?
+                            - if spot.likes.find_by(user_id:current_user.id)
+                              .iine
+                                %i.fa.fa-heart
+                            - else
+                              %i.far.fa-heart
                           - else
                             %i.far.fa-heart
-                        - else
-                          %i.far.fa-heart
-                      .likes-count
-                        = spot.likes.count
-      .main-box__new
+                        .like-count
+                          = spot.likes.count
       .main-box__new__title
         %span.main-box__new__title__tag＃
         .main-box__new__title__text
-          大阪
+          = link_to prefecture_path(27) do
+            大阪
       .new-contents
         .new-contents__box
           - @oosaka.each do |spot|
@@ -402,24 +420,30 @@
                     = spot.name
                   .spot-box__text__box
                     .spot-box__text__box--area
-                      
+                      大阪
                     .spot-box__text__box--icon
-                      .likes
-                        - if user_signed_in?
-                          - if spot.likes.find_by(user_id:current_user.id)
-                            .iine
-                              %i.fa.fa-heart
+                      .spot-box__text__box--icon__comment
+                        .comment
+                          %i.fa.fa-comment-dots
+                        .comment-count
+                          = spot.comments.count
+                      .spot-box__text__box--icon__like
+                        .like
+                          - if user_signed_in?
+                            - if spot.likes.find_by(user_id:current_user.id)
+                              .iine
+                                %i.fa.fa-heart
+                            - else
+                              %i.far.fa-heart
                           - else
                             %i.far.fa-heart
-                        - else
-                          %i.far.fa-heart
-                      .likes-count
-                        = spot.likes.count
-      .main-box__new
+                        .like-count
+                          = spot.likes.count
       .main-box__new__title
         %span.main-box__new__title__tag＃
         .main-box__new__title__text
-          沖縄
+          = link_to prefecture_path(47) do
+            沖縄
       .new-contents
         .new-contents__box
           - @okinawa.each do |spot|
@@ -431,17 +455,23 @@
                     = spot.name
                   .spot-box__text__box
                     .spot-box__text__box--area
-                      
+                      沖縄
                     .spot-box__text__box--icon
-                      .likes
-                        - if user_signed_in?
-                          - if spot.likes.find_by(user_id:current_user.id)
-                            .iine
-                              %i.fa.fa-heart
+                      .spot-box__text__box--icon__comment
+                        .comment
+                          %i.fa.fa-comment-dots
+                        .comment-count
+                          = spot.comments.count
+                      .spot-box__text__box--icon__like
+                        .like
+                          - if user_signed_in?
+                            - if spot.likes.find_by(user_id:current_user.id)
+                              .iine
+                                %i.fa.fa-heart
+                            - else
+                              %i.far.fa-heart
                           - else
                             %i.far.fa-heart
-                        - else
-                          %i.far.fa-heart
-                      .likes-count
-                        = spot.likes.count
+                        .like-count
+                          = spot.likes.count
   = render "more/footer"

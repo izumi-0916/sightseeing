@@ -43,12 +43,10 @@
       max-height: 675px;
       overflow-y: scroll;
       .content{
-        display: none;
         display: flex;
-        justify-content: space-between;
         flex-wrap: wrap;
         .spot-box{
-          margin-bottom: 15px;
+          margin: 0 2px 15px;
           border-radius: 12px;
           box-shadow: 0 0 4px #eae6dc;
           &__img{

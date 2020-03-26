@@ -13,10 +13,9 @@
     }
     &__box{
       display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
       .p-spot-box{
-        margin-bottom: 20px;
+        margin: 0 16px 20px;
         border-radius: 12px;
         box-shadow: 0 0 4px #eae6dc;
         &__img{
@@ -33,18 +32,36 @@
             font-size: 15px;
             font-weight: bold;
           }
-          &--icon{
+          &__box{
             display: flex;
-            justify-content: flex-end;
-            margin-right: 10px;
-            .likes{
-              display: flex;
-              .iine{
-                color: red;
-              }
+            justify-content: space-between;
+            &--place{
+              font-size: 15px;
             }
-            .likes-count{
-              margin-left: 3px;
+            &--icon{
+              display: flex;
+              margin-right: 10px;
+              &__comment{
+                display: flex;
+                margin-right: 5px;
+                .comment{
+                  color: #5f6367;
+                }
+                .comment-count{
+                  margin-left: 3px;
+                }
+              }
+              &__like{
+                display: flex;
+                .like{
+                  .iine{
+                    color: red;
+                  }
+                }
+                .like-count{
+                  margin-left: 3px;
+                }
+              }
             }
           }
         }
