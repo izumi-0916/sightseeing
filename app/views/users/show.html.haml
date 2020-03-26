@@ -12,7 +12,7 @@
           %i.fa.fa-th
         %li#heart.menu-item
           %i.fa.fa-heart
-      %ul.contents
+      %ul.mp-contents
         %li.content.hidden
           - @likes.each do |like| 
           - spot = Spot.find_by(id: like.spot_id) 
@@ -127,8 +127,6 @@
                         = spot.likes.count
                   .spot-box__text__name
                     = spot.name
-          .mp-page
-            = paginate(@likes)
         %li.content
           - @spots.each do |spot|
             .spot-box
@@ -242,6 +240,4 @@
                         = spot.likes.count
                   .spot-box__text__name
                     = spot.name
-          .mp-page
-            = paginate(@spots)
   = render "more/footer"
