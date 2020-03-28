@@ -49,7 +49,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'unicorn'
+  gem 'unicorn', '5.4.1'
 end
 
 group :development do
