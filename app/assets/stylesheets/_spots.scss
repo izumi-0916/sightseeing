@@ -10,24 +10,18 @@
     &__top{
       display: table-cell;
       vertical-align: middle;
-      height: 500px;
+      height: 360px;
       width: 100vw;
-      position: relative;
+      background-image: url(MIZ19819003_TP_V.jpg);
+      background-size: cover;
+      background-position: right center;
       &__title{
-        position: absolute;
-        top: 140px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        margin: auto;
-        &__box{
-          display: flex;
-          justify-content: center;
-          font-size: 60px;
-        }
-        &__text{
-          text-align: center;
-        }
+        display: flex;
+        justify-content: center;
+        font-size: 60px;
+      }
+      &__text{
+        text-align: center;
       }
     }
     .main-box{
