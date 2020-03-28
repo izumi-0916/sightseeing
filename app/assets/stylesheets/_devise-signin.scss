@@ -1,6 +1,6 @@
 .signup{
   padding: 24px 0;
-  min-height: 574px;
+  min-height: calc(100vh - 247px);
   background-color: #f7f7f7;
   display: table;
   &__main{
