@@ -4,32 +4,29 @@
       素敵な観光スポットをを探せるおすすめスポット専用投稿サイト
   .header__title
     .header__title__box
-      .header__title__box__right
-        = link_to root_path do
-          .header__title__box__right__logo
-            .header__title__box__right__logo--icon
-              %i.fa.fa-plane
-            .header__title__box__right__logo--name
-              Sightseeing
       .header__title__box__left
-        .header__title__box__left__search
-          = link_to "#" do
-            %i.fa.fa-search
-        .header__title__box__left__mypage
+        = link_to root_path do
+          .header__title__box__left__logo
+            .header__title__box__left__logo--icon
+              %i.fa.fa-plane
+            .header__title__box__left__logo--name
+              Sightseeing
+      .header__title__box__right
+        .header__title__box__right__mypage
           - if user_signed_in?
             = link_to user_path(current_user.id),data: {"turbolinks" => false} do
               %i.fa.fa-user
-        .header__title__box__left__post
+        .header__title__box__right__post
           - if user_signed_in?
             = link_to new_spot_path do
-              .header__title__box__left__post__name
+              .header__title__box__right__post__name
                 新規投稿
           - else
             = link_to new_user_session_path do
-              .header__title__box__left__post__name
+              .header__title__box__right__post__name
                 はじめる
-        .header__title__box__left__post
+        .header__title__box__right__post
           - if user_signed_in?
             = link_to  destroy_user_session_path, method: :delete do
-              .header__title__box__left__post__name
+              .header__title__box__right__post__name
                 ログアウト
