@@ -1,5 +1,6 @@
 .s-main{
   background-color: #f7f7f7;
+  min-height: calc(100vh - 247px);
   &__content{
     width: 960px;
     margin: 0 auto;
