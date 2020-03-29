@@ -9,6 +9,6 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_spots, through: :likes, source: :spot
 
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true
   validates :email, format: { with: /\A\S+@\S+\.\S+\z/ }
 end
