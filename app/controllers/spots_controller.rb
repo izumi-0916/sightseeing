@@ -4,6 +4,7 @@ class SpotsController < ApplicationController
     @images = Image.all
     @spots = Spot.all.order("created_at DESC").limit(4)
     @count = Spot.all
+    @num = @count.count
     prefecture = Prefecture.find(1)
     @hokkaidou = prefecture.spots.order("created_at DESC").limit(4)
     prefecture = Prefecture.find(13)

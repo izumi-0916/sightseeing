@@ -187,27 +187,12 @@
                   %li
                     = link_to prefecture_path(47) do
                       沖縄
-    - if @count.count >= 10 && @count.count < 50
-      .main-box__news
-        .main-box__news__title
-          .main-box__news__title__1
-            news
-          .main-box__news__title__2
-            スポット投稿数が10件をこえました🎉
-    - elsif @count.count >= 50 && @count.count < 100
-      .main-box__news
-        .main-box__news__title
-          .main-box__news__title__1
-            news
-          .main-box__news__title__2
-            スポット投稿数が50件をこえました🎉
-    - elsif @count.count >= 100
-      .main-box__news
-        .main-box__news__title
-          .main-box__news__title__1
-            news
-          .main-box__news__title__2
-            スポット投稿数が100件をこえました🎉
+    .main-box__news
+      .main-box__news__title
+        .main-box__news__title__1
+          news
+        .main-box__news__title__2
+          スポット投稿数が#{@num}件になりました🎉
     .main-box__new
       .main-box__new__title
         %span.main-box__new__title__tag＃
