@@ -32,12 +32,12 @@
     .main-box{
       padding-top: 40px;
       .area{    
-        padding: 32px;
+        padding: 32px 10px;
         border-radius: 16px;
         background: #ffffff;
         box-shadow: 0 0 4px #eae6dc;
         background-color: white;
-        width: 1000px;
+        width: 950px;
         margin: 0 auto;
         &__title{
           display: flex;
@@ -53,7 +53,7 @@
             display: flex;
             justify-content: space-between;
             &__left{
-              width: 48%;   
+              width: 49%;   
               .area-group{
                 border: 1px solid #3CCACE;
                 border-radius: 30px;
@@ -72,7 +72,7 @@
                   transition: all 0.3s ease 0s;
                   border-radius: 5px;
                   padding: 2px;
-                  margin-right: 8px;
+                  margin-right: 5px;
                   margin-bottom: 50px;
                   a{
                     transition: all 0.3s ease 0s;
@@ -89,7 +89,7 @@
               }
             }
             &__right{
-              width: 48%;   
+              width: 49%;   
               .area-group{
                 border: 1px solid #3CCACE;
                 border-radius: 30px;
@@ -128,7 +128,7 @@
         }
       }
       &__news{
-        width: 70%;
+        width: 950px;
         margin: 0 auto;
         margin-top: 40px;
         &__title{
@@ -147,7 +147,7 @@
         }
       }
       &__new{
-        width: 70%;
+        width: 950px;
         margin: 0 auto;
         &__title{
           display: flex;
@@ -164,10 +164,11 @@
         .new-contents{
           &__box{
             display: flex;
+            
             .spot-box{
-              margin-right: 42px;
               border-radius: 12px;
               box-shadow: 0 0 4px #eae6dc;
+              margin-right: 23px;
               &__img{
                 border-radius: 12px 12px 0 0;
               }
