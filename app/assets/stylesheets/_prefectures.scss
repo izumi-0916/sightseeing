@@ -3,7 +3,7 @@
   background-color: #f7f7f7;
   padding: 60px 0 80px;
   &__contents{
-    width: 70%;
+    width: 950px;
     margin: 0 auto;
     &__title{
       display: flex;
@@ -15,7 +15,7 @@
       display: flex;
       flex-wrap: wrap;
       .p-spot-box{
-        margin: 0 16px 20px;
+        margin: 0 8px 20px;
         border-radius: 12px;
         box-shadow: 0 0 4px #eae6dc;
         &__img{
