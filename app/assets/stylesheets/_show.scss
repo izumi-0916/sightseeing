@@ -105,10 +105,13 @@
             &__text{
               font-size: 18px;
               font-weight: bold;
+              width: 72px;
             }
             &__area{
               font-size: 18px;
-              margin-left: 80px;
+              margin-left: 40px;
+              width: 488px;
+              word-wrap: break-word;
             }
           }
           .s-spot-station{
@@ -118,10 +121,13 @@
             &__title{
               font-size: 18px;
               font-weight: bold;
+              width: 72px;
             }
             &__name{
               font-size: 18px;
               margin-left: 40px;
+              width: 488px;
+              word-wrap: break-word;
             }
           }
         }
