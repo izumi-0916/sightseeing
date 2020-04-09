@@ -42,6 +42,11 @@
             justify-content: space-between;
             &--place{
               font-size: 15px;
+              width: 120px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              font-family: Arial;
             }
             &--icon{
               display: flex;
