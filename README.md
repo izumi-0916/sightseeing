@@ -82,7 +82,7 @@ belongs_to :spot
 |Column|Type|Options|
 |------|----|-------|
 |src|string|null: false|
-|item_id|bigint||
+|spot_id|bigint||
 ### Association
 belongs_to :spot
 
